@@ -75,21 +75,38 @@ What are our recommended functional units and when should you choose one or the 
 - Data volume/calculations processed by the application
 - Number of models/locations/etc. for which different calculations are required
 - Any combination/fraction of the above-mentioned
-- TODO
 
 ##### How to choose your functional unit
 
-TODO TRi cut this down and integrate picture
+For the choosing of the functional unit, we offer a quick and easy way [here](#the-heuristic-way) that will work 
+in most cases and does not require an in depth understanding of the subject material. This will usually be all that is required 
+and if this is the case in your project, you can scip the section titled ["A more in depth look"](#a-more-in-depth-look).
+But if you want to gain a better understanding or are faced with a more complex situation, ["A more in depth look"](#a-more-in-depth-look) a look.
+
+###### The heuristic way
+
+For ease of use with customers, we created a handy flow chart. It can be used together with a customer to have 
+a structure that you can lead them through, or you can guide them through these questions another way. 
 
 ![Our easy find your R flow chart](/diagrams/simple_functional_unit_mermaid-diagram.svg)
 
-The first step is, of course, to eliminate those units that don't make sense for the system. E.g. if you have a system that receives requests from users that it answers with simple results consisting of only KBites worth of text.
-Streamed data volume would make no sense here. It could be that your application performs quite demanding calculations for some answers, and not for others. That might make API calls also a bad R. Why?
+In addition to this, you should go through the following checks afterward to make sure the chosen R does make sense:
 
-Because the questions we must ask ourselves first when choosing a functional unit is: **Is each instance of this R at least somewhat similar to its other instances? If not, is their difference in occurrence at least somewhat stable?**
+- TODO TRi check questions
 
-What do we mean by this? Well, if our API offers a number of calculations that all differ wildly in how much computing power their answer requires,
-and they are not called with the same level of volume, our results might not be meaningful.
+###### A more in depth look
+
+The first step is, of course, to eliminate those units that don't make sense for the system. 
+E.g. if you have a system that receives requests from users that it answers with simple results consisting of only KBites worth of text.
+Streamed data volume would make no sense here. It could be that your application performs quite demanding calculations for some answers, 
+and not for others. That might make API calls also a bad R. Why?
+
+Because the questions we must ask ourselves first when choosing a functional unit is: 
+**Is each instance of this R at least somewhat similar to its other instances? 
+If not, is their difference in occurrence at least somewhat stable?**
+
+What do we mean by this? Well, if our API offers a number of calculations that all differ wildly in how much 
+computing power their answer requires, and they are not called with the same level of volume, our results might not be meaningful.
 ```
 Let's say we have a weather app. Calls about the current weather in a place require almost no effort from our system and predictions for specific places require a lot. The ratio of calls between the two varies from 80/20 to 20/80. 
 Our SCI will experience significant fluctuations in response to the ratio of predictions calls to current weather calls, without any action on our side. 
