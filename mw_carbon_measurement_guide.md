@@ -81,6 +81,8 @@ What are our recommended functional units and when should you choose one or the 
 
 TODO TRi cut this down and integrate picture
 
+![Our easy find your R flow chart](/diagrams/simple_functional_unit_mermaid-diagram.svg)
+
 The first step is, of course, to eliminate those units that don't make sense for the system. E.g. if you have a system that receives requests from users that it answers with simple results consisting of only KBites worth of text.
 Streamed data volume would make no sense here. It could be that your application performs quite demanding calculations for some answers, and not for others. That might make API calls also a bad R. Why?
 
@@ -164,10 +166,10 @@ Now with the easy decisions out of the way, we turn to the system boundaries and
 
 The carbon footprint of your cluster will be decisive in many projects.
 
-Our first standard recommendation is the [Cloud-Carbon-Footprint-Tool](../analysis/overview_guide_existing_measurement_tools.md#cloud-carbon-footprint-tool-by-thoughtworks).
+Our first standard recommendation is the [Cloud-Carbon-Footprint-Tool](https://www.cloudcarbonfootprint.org/docs/methodology) by Thoughtworks.
 
 Currently, we only have a recommendation and [step-by-step](TODO link to set up doc) guide for Azure hosted projects,
-but the recommended tool also works for AWS and Google cloud, you just have to put a bit more work into setting it up.
+but the recommended tool also works for AWS and Google cloud, it even has [dedicated ways to deploy](https://www.cloudcarbonfootprint.org/docs/deploying) on those services, unlike for Azure.
 
 Note some important things:
 - Like all available tools, the CCF does only provide an estimation
