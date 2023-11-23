@@ -2,6 +2,7 @@
 
 ## Table of Contents
 
+- [Introduction](#Introduction)
 - [Glossary](#Glossary)
 - [What to measure](#what-to-measure)
 - [MW SCI Definition](#mw-sci-definition)
@@ -12,6 +13,17 @@
 - [Our Measurement and Calculation Approach](#our-measurement-and-calculation-approach)
     - [Cluster carbon measurement/estimation](#cluster-carbon-measurementestimation)
     - [Website efficiency](#website-efficiency)
+
+### Introduction
+
+Welcome to the MaibornWolff green software carbon measurement recommendations guide. This guide will give you a standard template
+for how to set up an effective monitoring structure for the carbon emissions the software you are creating is producing. 
+It will also provide you with some understanding of the subject of green software in general. It is not a guide focused on carbon optimisation,
+for that take a look [here](TODO TRi add link to other guide). However, there is some overlap by default, which will at times be discussed here as well. 
+
+There is deeper knowledge on the topic available as well, which can be found in the documents we link to when discussing the relevant topics here.
+This is for the interested and not strictly required in order to practically apply our green software development approach in your projects. 
+For any questions and feedback, contact the members of the [MaibornWolff Green in IT project](TODO TRi link to what? Also, maybe Green Ivory Space?).
 
 ### Glossary
 
@@ -30,7 +42,7 @@
 ### What to measure
 
 As discussed in the "[what can be measured and what should we measure](../analysis/overview_guide_measurement_practices.md#what-can-be-measured-and-what-should-we-measure)" section
-of our [overview guide for measurement practices](../analysis/overview_guide_measurement_practices.md) our first priority should be to measure electricity usage.
+of our [overview guide for measurement practices](/deeper_foundations/overview_guide_measurement_practices.md) our first priority should be to measure electricity usage.
 It alone does not enable us to calculate all the carbon we create, but it is the most important building block in doing so.
 
 Hardware usage is the second very important thing we can measure with relative ease. Even if we do not know the exact amount of embodied carbon in each
@@ -199,7 +211,9 @@ but also your electricity usage and estimated cost, and works with all 3 big clo
 Its [methodology for CO2eq estimation](https://www.cloudcarbonfootprint.org/docs/methodology) is sound and finds approval in the Green IT community.
 It is also a free open source project, as long as you are fine with the lower accuracy it has without the electricity maps account.
 This makes it easier to pitch to potential customers, and once they are happy with the results, you can always upgrade and
-buy an electricity maps account. TODO talk about potential MW EM account with group and then potentially edit here
+buy an electricity maps account. 
+
+TODO talk about potential MW EM account with group and then potentially edit here
 
 We recommend that you talk to your PO or potential customer and show them what the CCF can provide, by showing them the
 [dashboard of the Green-in-IT](http://mwgiitccf.westeurope.cloudapp.azure.com) project. If more convincing is needed,
@@ -210,3 +224,5 @@ TODO TRi finish
 
 
 #### Website efficiency
+
+This 
