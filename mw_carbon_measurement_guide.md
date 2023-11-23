@@ -4,11 +4,11 @@
 
 - [Introduction](#Introduction)
 - [Glossary](#Glossary)
-- [What to measure](#what-to-measure)
 - [MW SCI Definition](#mw-sci-definition)
 - [Why we mostly use SCi, and when to use GHG](#why-we-mostly-use-sci-and-when-to-use-ghg)
 - [Our Functional Units](#our-functional-units)
     - [How to choose your functional unit](#how-to-choose-your-functional-unit)
+- [What to measure](#what-to-measure)
 - [What we include, exclude and why](#what-we-include-exclude-and-why)
 - [Our Measurement and Calculation Approach](#our-measurement-and-calculation-approach)
     - [Cluster carbon measurement/estimation](#cluster-carbon-measurementestimation)
@@ -38,20 +38,6 @@ For any questions and feedback, contact the members of the [MaibornWolff Green i
 | GSF                   | [Green Software Foundation](https://greensoftware.foundation/manifesto)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | GHG protocol          | [Greenhouse Gas protocol](https://ghgprotocol.org/) - the most commonly-used method for organizations to measure their total carbon emissions                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | RAPL                  | Running Average Power Limit is a power estimation feature in modern x86 CPUs from Intel and AMD. n the green software community it is extensively used in order to get accurate energy measurements for the CPU and DRAM components.                                                                                                                                                                                                                                                                                                                                                                               |
-
-### What to measure
-
-As discussed in the "[what can be measured and what should we measure](../analysis/overview_guide_measurement_practices.md#what-can-be-measured-and-what-should-we-measure)" section
-of our [overview guide for measurement practices](/deeper_foundations/overview_guide_measurement_practices.md) our first priority should be to measure electricity usage.
-It alone does not enable us to calculate all the carbon we create, but it is the most important building block in doing so.
-
-Hardware usage is the second very important thing we can measure with relative ease. Even if we do not know the exact amount of embodied carbon in each
-piece of equipment or its expected lifespan, maximising usage and minimising idle time caused by us is always the correct direction to take,
-even if in some cases we might not be able to calculate how much carbon we save.
-
-In cases where we relay solely on the SCI, we will just measure the electricity usage and hardware utilisation of our pods running in our k8s cluster.
-In cases where we also need our total GHG score - [see here for when that is](#why-we-mostly-use-sci-and-when-to-use-ghg) - we will need to
-also measure several other components, including during our development process.
 
 ### MW SCI Definition
 
@@ -98,9 +84,9 @@ But if you want to gain a better understanding or are faced with a more complex 
 ###### The heuristic way
 
 For ease of use with customers, we created a handy flow chart. It can be used together with a customer to have 
-a structure that you can lead them through, or you can guide them through these questions another way. 
+a structure that you can lead them through, or you can guide them through these questions another way.
 
-![Our easy find your R flow chart](/diagrams/simple_functional_unit_mermaid-diagram.svg)
+<img alt="Our easy find your R flow chart" height="2400" src="/diagrams/simple_functional_unit_mermaid-diagram.svg" width="2400"/>
 
 In addition to this, you should go through the following checks afterward to make sure the chosen R does make sense:
 
@@ -175,6 +161,21 @@ If the project menagement insists upon one R for the whole system landsacape we 
 ```
 
 
+### What to measure
+
+For a deeper discussion of the following topic, take a look at the "[what can be measured and what should we measure](/deeper_foundations/overview_guide_measurement_practices.md#what-can-be-measured-and-what-should-we-measure)" section
+of our [overview guide for measurement practices](/deeper_foundations/overview_guide_measurement_practices.md). Here are the important takeaways:
+
+Our first priority should be to measure electricity usage.
+It alone does not enable us to calculate all the carbon we create, but it is the most important building block in doing so.
+
+Hardware usage is the second very important thing we can measure with relative ease. Even if we do not know the exact amount of embodied carbon in each
+piece of equipment or its expected lifespan, maximising usage and minimising idle time caused by us is always the correct direction to take,
+even if in some cases we might not be able to calculate how much carbon we save.
+
+In cases where we relay solely on the SCI, we will just measure the electricity usage and hardware utilisation of our pods running in our k8s cluster.
+In cases where we also need our total GHG score - [see here for when that is](#why-we-mostly-use-sci-and-when-to-use-ghg) - we will need to
+also measure several other components, including during our development process.
 
 #### What we include, exclude and why
 
