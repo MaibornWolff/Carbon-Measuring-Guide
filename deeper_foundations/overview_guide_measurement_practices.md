@@ -174,7 +174,8 @@ Cons:
 
 #### Software Carbon Intensity
 
-The [Software Carbon Intensity (SCI) specification](https://grnsft.org/SCI) is a methodology developed by the Standards Working Group of the Green Software Foundation, designed to score a software application along a dimension of sustainability and to encourage action towards eliminating emissions. It will form the basis for assessing the effectiveness of our decisions and actions. Why will be shown once we understand how to calculate it, as well as some important concepts regarding carbon efficiency.
+The [Software Carbon Intensity (SCI) specification](https://grnsft.org/SCI) is a methodology developed by the Standards Working Group of the Green Software Foundation, designed to score a software application along a dimension of sustainability and to encourage action towards eliminating emissions. 
+It will form the basis for assessing the effectiveness of our decisions and actions. Why will be shown once we understand how to calculate it, as well as some important concepts regarding carbon efficiency.
 
 The SCI is calculated as follows:
 

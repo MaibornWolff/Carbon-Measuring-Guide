@@ -4,13 +4,14 @@
 
 - [Introduction](#Introduction)
 - [Glossary](#Glossary)
-- [MW SCI Definition](#mw-sci-definition)
-- [Why we mostly use SCi, and when to use GHG](#why-we-mostly-use-sci-and-when-to-use-ghg)
-- [Our Functional Units](#our-functional-units)
-    - [How to choose your functional unit](#how-to-choose-your-functional-unit)
+- [Software Carbon Intensity](#software-carbon-intensity)
+  - [Why we mostly use SCi, and when to use GHG](#why-we-mostly-use-sci-and-when-to-use-ghg)
+  - [MW SCI Definition](#mw-sci-definition)
+    - [Our Functional Units](#our-functional-units)
+        - [How to choose your functional unit](#how-to-choose-your-functional-unit)
 - [What to measure](#what-to-measure)
-- [What we include, exclude and why](#what-we-include-exclude-and-why)
-- [Our Measurement and Calculation Approach](#our-measurement-and-calculation-approach)
+  - [What we include, exclude and why](#what-we-include-exclude-and-why)
+- [Our Practical Measurement and Calculation Approach](#our-practical-measurement-and-calculation-approach)
     - [Cluster carbon measurement/estimation](#cluster-carbon-measurementestimation)
     - [Website efficiency](#website-efficiency)
 
@@ -39,10 +40,20 @@ For any questions and feedback, contact the members of the [MaibornWolff Green i
 | GHG protocol          | [Greenhouse Gas protocol](https://ghgprotocol.org/) - the most commonly-used method for organizations to measure their total carbon emissions                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | RAPL                  | Running Average Power Limit is a power estimation feature in modern x86 CPUs from Intel and AMD. n the green software community it is extensively used in order to get accurate energy measurements for the CPU and DRAM components.                                                                                                                                                                                                                                                                                                                                                                               |
 
-### MW SCI Definition
+### Software Carbon Intensity
 
-The general definition of SCI was already discussed [here](../analysis/overview_guide_measurement_practices.md#software-carbon-intensity), so we won't repeat it again.
-Instead, we will discuss why we use it over GHG most of the time and what to do with the individual factors in its formula:
+Software Carbon Intensity (SCI) is a methodology developed to score a software application along a dimension of sustainability and to encourage action towards eliminating emissions. 
+If you are interested in more than simply what you need to know for its application in a project, you can take a look either at our more detailed exploration [here](/deeper_foundations/overview_guide_measurement_practices.md#software-carbon-intensity)
+or take a look at the [definition](https://grnsft.org/SCI) provided by its creators, the Standards Working Group of the Green Software Foundation.
+Instead, we will discuss why we use it over a score of total carbon emissions (GHG) most of the time and how we use it in our projects.
+
+#### Why we mostly use SCI, and when to use GHG
+
+As already partially discussed [here](../analysis/overview_guide_measurement_practices.md#quantify) we generally prefer SCI over GHG because it sets the right incentives
+for improving efficiency over time and does not penalise up-front investments into carbon cost saving measures. We can also observe changes in our efficiency
+more easily when we use SCI, both positive and negative. It also will not penalise growing the user base if the functional unit is chosen correctly.
+
+#### MW SCI Definition
 
 ```
 SCI = ((E * I) + M) per R
@@ -51,13 +62,9 @@ For this we will have a look how to choose the functional unit (R), how to measu
 what tools to use to convert the measured energy into gCO2eq based on the location-based marginal carbon emissions (I),
 and lastly how to measure the embodied emissions of a software system (M) based on what must be included and what can be excluded for this.
 
-#### Why we mostly use SCI, and when to use GHG
 
-As already partially discussed [here](../analysis/overview_guide_measurement_practices.md#quantify) we generally prefer SCI over GHG because it sets the right incentives
-for improving efficiency over time and does not penalise up-front investments into carbon cost saving measures. We can also observe changes in our efficiency
-more easily when we use SCI, both positive and negative. It also will not penalise growing the user base if the functional unit is chosen correctly.
 
-#### Our Functional Units
+##### Our Functional Units
 
 Deciding which functional unit (R) is right for the project will always be a case by case decision. But we can provide a step-by-step guide that will make the decision much easier.
 
@@ -74,7 +81,7 @@ What are our recommended functional units and when should you choose one or the 
 - Number of models/locations/etc. for which different calculations are required
 - Any combination/fraction of the above-mentioned
 
-##### How to choose your functional unit
+###### How to choose your functional unit
 
 For the choosing of the functional unit, we offer a quick and easy way [here](#the-heuristic-way) that will work 
 in most cases and does not require an in depth understanding of the subject material. This will usually be all that is required 
@@ -86,7 +93,7 @@ But if you want to gain a better understanding or are faced with a more complex 
 For ease of use with customers, we created a handy flow chart. It can be used together with a customer to have 
 a structure that you can lead them through, or you can guide them through these questions another way.
 
-<img alt="Our easy find your R flow chart" height="2400" src="/diagrams/simple_functional_unit_mermaid-diagram.svg" width="2400"/>
+<img alt="Our easy find your R flow chart" height="1200" src="/diagrams/simple_functional_unit_mermaid-diagram.svg" width="2400"/>
 
 In addition to this, you should go through the following checks afterward to make sure the chosen R does make sense:
 
@@ -190,7 +197,7 @@ First lets get the easy decisions out of the way:
 
 Now with the easy decisions out of the way, we turn to the system boundaries and embodied emissions that are harder to define. TODO TRi expand here
 
-### Our Measurement and Calculation Approach
+### Our Practical Measurement and Calculation Approach
 
 #### Cluster carbon measurement/estimation
 
