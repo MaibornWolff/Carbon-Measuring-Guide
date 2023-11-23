@@ -100,7 +100,7 @@ What are our recommended functional units and when should you choose one or the 
 For the choosing of the functional unit, we offer a quick and easy way [here](#the-heuristic-way) that will work 
 in most cases and does not require an in depth understanding of the subject material. This will usually be all that is required 
 and if this is the case in your project, you can scip the section titled ["A more in depth look"](#a-more-in-depth-look).
-But if you want to gain a better understanding or are faced with a more complex situation, ["A more in depth look"](#a-more-in-depth-look) a look.
+But if you want to gain a better understanding or are faced with a more complex situation, give it a look.
 
 ###### The heuristic way
 
@@ -109,9 +109,12 @@ a structure that you can lead them through, or you can guide them through these 
 
 <img alt="Our easy find your R flow chart" height="1000" src="/diagrams/simple_functional_unit_mermaid-diagram.svg" width="2600"/>
 
-In addition to this, you should go through the following checks afterward to make sure the chosen R does make sense:
+In addition to this, you should go through the following checks afterward and from time to time during the software lifecycle, to make sure the chosen R does make sense:
 
-- TODO TRi check questions
+- If I apply this R, can it happen that by being more successful(more users sign up/devises register, more sales happen, etc.) I get a worse SCI? The answer should be NO!
+- If more users/devices/etc. become inactive but stay registered, can this decrease my SCI without me getting more efficient? The answer should be NO!
+- Does my SCI fluctuate without my software changing in relevant ways? The answer should be NO!
+- TODO TRi finish check questions
 
 ###### A more in depth look
 
@@ -251,4 +254,4 @@ TODO TRi finish
 
 #### Website efficiency
 
-This 
+TODO TRi
