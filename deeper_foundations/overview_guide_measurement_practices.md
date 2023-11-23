@@ -179,7 +179,9 @@ It will form the basis for assessing the effectiveness of our decisions and acti
 
 The SCI is calculated as follows:
 
+```
 SCI = ((E * I) + M) per R
+```
 
 In this formula
 
@@ -236,7 +238,7 @@ In case of desktop or other locally run application, as well as the local/end-us
 
 ###### Quantify
 
-Once all software components are defined and a SCI score for each can be calculated. A total SCI of your application - the sum of all component SCIs - is only possible though,
+Once all software components are defined and an SCI score for each can be calculated. A total SCI of your application - the sum of all component SCIs - is only possible though,
 if you chose the same functional unit for each of them, hence it is advisable to do that, unless there is a very good reason not to.
 In such a case components with the same functional units would be grouped and seen as a separate application with their own SCI score.
 E.g. might be seeing the desktop application of a product as one application with its own functional unit and SCI score,

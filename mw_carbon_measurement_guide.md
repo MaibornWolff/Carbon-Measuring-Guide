@@ -6,7 +6,7 @@
 - [Glossary](#Glossary)
 - [Software Carbon Intensity](#software-carbon-intensity)
   - [Why we mostly use SCi, and when to use GHG](#why-we-mostly-use-sci-and-when-to-use-ghg)
-  - [MW SCI Definition](#mw-sci-definition)
+  - [MW SCI Usage](#mw-sci-usage)
     - [Our Functional Units](#our-functional-units)
         - [How to choose your functional unit](#how-to-choose-your-functional-unit)
 - [What to measure](#what-to-measure)
@@ -49,20 +49,34 @@ Instead, we will discuss why we use it over a score of total carbon emissions (G
 
 #### Why we mostly use SCI, and when to use GHG
 
-As already partially discussed [here](../analysis/overview_guide_measurement_practices.md#quantify) we generally prefer SCI over GHG because it sets the right incentives
-for improving efficiency over time and does not penalise up-front investments into carbon cost saving measures. We can also observe changes in our efficiency
+If you are interested in a deeper look into the pros and contras of SCI and GHG look [here](/deeper_foundations/overview_guide_measurement_practices.md#quantify).
+In short, we generally prefer SCI to GHG because it sets the right incentives for improving carbon efficiency over time 
+and does not penalise up-front investments into carbon cost saving measures. We can also observe changes in our efficiency
 more easily when we use SCI, both positive and negative. It also will not penalise growing the user base if the functional unit is chosen correctly.
 
-#### MW SCI Definition
+If you are working on a project that requires a very large upfront carbon investment, such as training a machine learning model, SCi might not suffice.
+In that case, please contact the [MaibornWolff Green in IT project](TODO TRi link to what? Also, maybe Green Ivory Space?) for advice.
 
+#### MW SCI Usage
+
+Let's first take a look at the SCI formula, and then explain what each component normally entails in a software project
 ```
 SCI = ((E * I) + M) per R
 ```
-For this we will have a look how to choose the functional unit (R), how to measure the energy consumed by a software system (E) and what should be in- and excluded for this,
-what tools to use to convert the measured energy into gCO2eq based on the location-based marginal carbon emissions (I),
-and lastly how to measure the embodied emissions of a software system (M) based on what must be included and what can be excluded for this.
 
+In this formula
 
+- E = Energy consumed by a software system
+- I = Location-based marginal carbon emissions
+- M = Embodied emissions of a software system
+- R = Functional unit (e.g. carbon per additional user, API-call, ML job, etc)
+
+We will first have a look at what are [possible functional units (R)](#our-functional-units) and [how to choose them](#how-to-choose-your-functional-unit).
+
+Then we discuss what tools we like to use to [measure](#our-practical-measurement-and-calculation-approach) the energy consumed by a software system (E) 
+and [what should be in- and excluded for this](#what-to-measure),
+what [tools to use to convert the measured energy into gCO2eq](#electricity-maps-paragraph) based on the location-based marginal carbon emissions (I),
+and lastly how to [measure the embodied emissions of a software system (M)](#embodied-emissions-paragraph) based on what must be included and what can be excluded for this.
 
 ##### Our Functional Units
 
@@ -93,7 +107,7 @@ But if you want to gain a better understanding or are faced with a more complex 
 For ease of use with customers, we created a handy flow chart. It can be used together with a customer to have 
 a structure that you can lead them through, or you can guide them through these questions another way.
 
-<img alt="Our easy find your R flow chart" height="1200" src="/diagrams/simple_functional_unit_mermaid-diagram.svg" width="2400"/>
+<img alt="Our easy find your R flow chart" height="1000" src="/diagrams/simple_functional_unit_mermaid-diagram.svg" width="2600"/>
 
 In addition to this, you should go through the following checks afterward to make sure the chosen R does make sense:
 
@@ -219,9 +233,13 @@ but also your electricity usage and estimated cost, and works with all 3 big clo
 Its [methodology for CO2eq estimation](https://www.cloudcarbonfootprint.org/docs/methodology) is sound and finds approval in the Green IT community.
 It is also a free open source project, as long as you are fine with the lower accuracy it has without the electricity maps account.
 This makes it easier to pitch to potential customers, and once they are happy with the results, you can always upgrade and
-buy an electricity maps account. 
+buy an electricity maps account.
 
-TODO talk about potential MW EM account with group and then potentially edit here
+<a name="electricity-maps-paragraph"></a>
+TODO TRi talk about potential MW EM account with group and then potentially edit here
+
+<a name="embodied-emissions-paragraph"></a>
+TODO TRi talk about embodied emissions here
 
 We recommend that you talk to your PO or potential customer and show them what the CCF can provide, by showing them the
 [dashboard of the Green-in-IT](http://mwgiitccf.westeurope.cloudapp.azure.com) project. If more convincing is needed,
