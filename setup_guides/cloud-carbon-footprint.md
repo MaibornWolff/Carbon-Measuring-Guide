@@ -61,9 +61,9 @@ Follow the guide (https://www.cloudcarbonfootprint.org/docs/azure/)
 > App Registrations is part of Entra ID, so only accounts that have access to Entra ID can perform steps 1 and 2.
 >
 >Step 3 is a bit ambiguous, read rights is enough for the application.
->The built in "Reader" role is a good alternative for a quick setup.
+>The built-in "Reader" role is a good alternative for a quick setup.
 
-Once the Azure App is set-up, use the correct values on the `.env` file.
+Once the Azure App is set up, use the correct values on the `.env` file.
 ```
 AZURE_CLIENT_ID=[Your Azure app id]
 AZURE_CLIENT_SECRET=[The Azure app secret]
@@ -76,13 +76,13 @@ You might also want to modify the line:
 AZURE_SUBSCRIPTIONS=["subscription-1", "subscription-2"]
 ```
 
-##### Data Persistance
+##### Data Persistence
 
 The application should be connected to a MongoDB database, however it offers the alternative of local storage.
 
 ##### Using Local Storage
 
-By default the `.env.template` file has several MongoDB settings that will make the api container to fail if not set properly.
+By default, the `.env.template` file has several MongoDB settings that will make the api container to fail if not set properly.
 
 If local cache is enough just comment out the lines:
 ```
