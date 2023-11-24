@@ -262,7 +262,27 @@ If they are sold, [integrate it in your existing DevOps environment](/setup_guid
 #### Website emissions and efficiency
 
 Website emissions analysis will by its nature also venture into efficiency optimization. As such, this section goes beyond just measuring.
+We primarily use three tools, [Ecograder](https://ecograder.com/), [Beacon](https://digitalbeacon.co/) and [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 
+that each have their place at different times in the development lifecycle. We recommend you proceed something like the following:
 
+##### During development
+
+Use Lighthouse constantly during development. Beacon and Ecograder need publicly available websites, 
+so you can't use them when you test locally/on your DEV-environment. Lighthouse will not give you a CO2eq calculation, 
+but you can point you towards design inefficiencies that you can avoid, thereby becoming more CO2eq-efficient as well.
+
+##### After every PROD-deployment
+
+Use both Beacon and Ecograder on your website after each PROD-deployment. 
+
+Beacon because it gives you a CO2eq score not only for your first visit, but also for subsequent visits. 
+Subsequent visits are usually more efficient because of Cookies, so you need a score for both 
+to be able to create representative calculations. Note each score like you might 
+the results of a linting tool after a sprint change. Assuming you have analytics about website visits, 
+you can now calculate an approximate value for the CO2eq usage of this part of the system. 
+
+Use Ecograder because it not only gives you a score, but more so because it points you to the largest avoidable sources 
+of your CO2eq output. Ideally there would be a story after every PROD Deployment dedicated to reducing these based on the results.
 
 TODO TRi finish
 
