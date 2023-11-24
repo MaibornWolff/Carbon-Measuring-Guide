@@ -19,6 +19,10 @@
 
 Welcome to the MaibornWolff green software carbon measurement recommendations guide. This guide will give you a standard template
 for how to set up an effective monitoring structure for the carbon emissions the software you are creating is producing. 
+
+It is tailored towards projects we commonly develop, that are hosted in the cloud and use technologies common in our tech-stack.
+Things like desktop applications and unusual edge cases are not discussed for now, but might be added in the future if there is demand for it.
+
 It will also provide you with some understanding of the subject of green software in general. It is not a guide focused on carbon optimisation,
 for that take a look [here](TODO TRi add link to other guide). However, there is some overlap by default, which will at times be discussed here as well. 
 
@@ -113,7 +117,7 @@ In addition to this, you should go through the following checks afterward and fr
 
 - If I apply this R, can it happen that by being more successful(more users sign up/devises register, more sales happen, etc.) I get a worse SCI? The answer should be NO!
 - If more users/devices/etc. become inactive but stay registered, can this decrease my SCI without me getting more efficient? The answer should be NO!
-- Does my SCI fluctuate without my software changing in relevant ways? The answer should be NO!
+- Does my SCI fluctuate without my software changing in relevant ways? The answer should be NO! Check this from time to time once the software is live and reassess if necessary
 - TODO TRi finish check questions
 
 ###### A more in depth look
@@ -128,9 +132,11 @@ Because the questions we must ask ourselves first when choosing a functional uni
 If not, is their difference in occurrence at least somewhat stable?**
 
 What do we mean by this? Well, if our API offers a number of calculations that all differ wildly in how much 
-computing power their answer requires, and they are not called with the same level of volume, our results might not be meaningful.
+computing power their answer requires, and they are not called with the same level of volume, 
+even statistically normalised oer time, our results might not be meaningful.
 ```
-Let's say we have a weather app. Calls about the current weather in a place require almost no effort from our system and predictions for specific places require a lot. The ratio of calls between the two varies from 80/20 to 20/80. 
+Let's say we have a weather app. Calls about the current weather in a place require almost no effort from our system and predictions for specific places require a lot. 
+The ratio of calls between the two varies from 80/20 to 20/80. 
 Our SCI will experience significant fluctuations in response to the ratio of predictions calls to current weather calls, without any action on our side. 
 If the ratio follows predictable patterns, it can be statistically normalised, but if not, it makes the SCI inadequate at best and misleading at worst.
 ```
@@ -208,11 +214,14 @@ and how important it is to set the right incentives to improve the carbon effici
 
 First lets get the easy decisions out of the way:
 
-- We definitely need to measure all electricity used by all systems we have control over and convert that into gCO2eq.
-- We definitely need to [in some way](TODO add section about how to ahndle this and link it here) include electricity used by systems we make calls to, that are not under our control, as otherwise we would create an incentive to simply outsource carbon intensive calculations
-- We definitely should not include carbon costs that were incurred when things like the fundamental infrastructure the internet runs on was created, the laptops we develop on were built, and other things that are very difficult to factor in
+- We definitely NEED to measure all electricity used by all systems we have control over and convert that into gCO2eq.
+- We definitely NEED to [in some way](TODO add section about how to ahndle this and link it here) include electricity used by systems we make calls to, that are not under our control, as otherwise we would create an incentive to simply outsource carbon intensive calculations
+- We definitely should NOT include carbon costs that were incurred when things like the fundamental infrastructure the internet runs on was created, the laptops we develop on were built, and other things that are very difficult to factor in
 
-Now with the easy decisions out of the way, we turn to the system boundaries and embodied emissions that are harder to define. TODO TRi expand here
+Now with the easy decisions out of the way, we turn to the system boundaries and embodied emissions that are harder to define. 
+Generally for a common project, hosted on a cluster and with some sort of front end, 
+our system boundary will be the cluster and the browser. 
+TODO TRi expand here
 
 ### Our Practical Measurement and Calculation Approach
 
