@@ -13,7 +13,7 @@
   - [What we include, exclude and why](#what-we-include-exclude-and-why)
 - [Our Practical Measurement and Calculation Approach](#our-practical-measurement-and-calculation-approach)
     - [Cluster carbon measurement/estimation](#cluster-carbon-measurementestimation)
-    - [Website efficiency](#website-efficiency)
+    - [Website emissions and efficiency](#website-emissions-and-efficiency)
 
 ### Introduction
 
@@ -215,13 +215,14 @@ and how important it is to set the right incentives to improve the carbon effici
 First lets get the easy decisions out of the way:
 
 - We definitely NEED to measure all electricity used by all systems we have control over and convert that into gCO2eq.
-- We definitely NEED to [in some way](TODO add section about how to ahndle this and link it here) include electricity used by systems we make calls to, that are not under our control, as otherwise we would create an incentive to simply outsource carbon intensive calculations
-- We definitely should NOT include carbon costs that were incurred when things like the fundamental infrastructure the internet runs on was created, the laptops we develop on were built, and other things that are very difficult to factor in
+- We definitely SHOULD [in some way](#emissions-produced-by-external-systems) include electricity used by systems we make calls to, that are not under our control, as otherwise we would create an incentive to simply outsource carbon intensive calculations
+- We definitely SHOULD NOT include carbon costs that were incurred when things like the fundamental infrastructure the internet runs on was created, the laptops we develop on were built, and other things that are very difficult to factor in
 
 Now with the easy decisions out of the way, we turn to the system boundaries and embodied emissions that are harder to define. 
 Generally for a common project, hosted on a cluster and with some sort of front end, 
-our system boundary will be the cluster and the browser. 
-TODO TRi expand here
+our system boundary will be the cluster and the browser/user interface. 
+In the following sections we explore how we actually measure the emissions produced by each 
+and also what to do about emissions produced by systems we call.
 
 ### Our Practical Measurement and Calculation Approach
 
@@ -255,12 +256,16 @@ TODO TRi talk about embodied emissions here
 
 We recommend that you talk to your PO or potential customer and show them what the CCF can provide, by showing them the
 [dashboard of the Green-in-IT](http://mwgiitccf.westeurope.cloudapp.azure.com) project. If more convincing is needed,
-follow our [step-by-step](TODO link to set up doc) guide to quickly set up an instance in a virtual machine.
-If they are sold, [integrate it in your existing DevOps environment](TODO link to second part of set up doc).
+follow our [step-by-step](/setup_guides/cloud-carbon-footprint.md#setup-and-steps-used-for-testingdeploying-in-a-virtual-machine) guide to quickly set up an instance in a virtual machine.
+If they are sold, [integrate it in your existing DevOps environment](/setup_guides/cloud-carbon-footprint.md#setup-and-deployment-to-your-kubernetes-cluster).
+
+#### Website emissions and efficiency
+
+Website emissions analysis will by its nature also venture into efficiency optimization. As such, this section goes beyond just measuring.
+
 
 TODO TRi finish
 
-
-#### Website efficiency
+#### Emissions produced by external systems
 
 TODO TRi
