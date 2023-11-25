@@ -288,4 +288,17 @@ TODO TRi finish
 
 #### Emissions produced by external systems
 
+In this case external systems mean systems that are mont only not on our cluster, but fully outside our control. 
+Otherwise, we could measure their carbon output like described above. Luckily, we do not need an exact score in order to 
+preserve an incentive structure that pushes us to be more efficient over time. We can instead set a few rules and heuristics 
+to help us with that. 
+
+1. If you can find the CO2eq or KW/h cost of the external process use that. Take as an example a ChatGPT query, which according to [this analysis](https://piktochart.com/blog/carbon-footprint-of-chatgpt/), produces approximately 4.32 grams of CO2. Sadly you often won't be able to such a value.
+2. If you extract something from your system and replace it with a call to an external system, always assume that it is at least as costly as when your system was doing it, unless you have proof to the contrary. Take the reduction of KW/h needed by your system following the extraction of the process, divided by its frequency as your assumed cost of the outsourced process.
+3. If the external process was external from the beginning, and you could not find out its CO2eq or KW/h cost, try to find one for a similar process and use it as a proxy. If you can find more than one similar process and its costs, use the worst one, unless there is reason to believe it is an outlier.
+4. If you can't find a value for it or something similar, and it wasn't extracted from your system, take an average for your other external call of which you do have a value.
+5. If heuristics 1-4 can't be applied, we muss accept it and exclude it from our system boundary and explain why we did so in when presenting our SCI.
+
+#### The actual SCI calculation
+
 TODO TRi
