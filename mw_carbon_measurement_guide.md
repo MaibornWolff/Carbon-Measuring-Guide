@@ -14,6 +14,8 @@
 - [Our Practical Measurement and Calculation Approach](#our-practical-measurement-and-calculation-approach)
     - [Cluster carbon measurement/estimation](#cluster-carbon-measurementestimation)
     - [Website emissions and efficiency](#website-emissions-and-efficiency)
+    - [Emissions produced by external systems](#emissions-produced-by-external-systems)
+    - [The actual MW SCI calculation](#the-actual-mw-sci-calculation)
 
 ### Introduction
 
@@ -299,6 +301,6 @@ to help us with that.
 4. If you can't find a value for it or something similar, and it wasn't extracted from your system, take an average for your other external call of which you do have a value.
 5. If heuristics 1-4 can't be applied, we muss accept it and exclude it from our system boundary and explain why we did so in when presenting our SCI.
 
-#### The actual SCI calculation
+#### The actual MW SCI calculation
 
 TODO TRi
