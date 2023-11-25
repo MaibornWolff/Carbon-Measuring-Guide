@@ -232,12 +232,12 @@ The carbon footprint of your cluster will be decisive in many projects.
 
 Our first standard recommendation is the [Cloud-Carbon-Footprint-Tool](https://www.cloudcarbonfootprint.org/docs/methodology) by Thoughtworks.
 
-Currently, we only have a recommendation and [step-by-step](TODO link to set up doc) guide for Azure hosted projects,
+Currently, we only have a recommendation and [step-by-step](/setup_guides/cloud-carbon-footprint.md) guide for Azure hosted projects,
 but the recommended tool also works for AWS and Google cloud, it even has [dedicated ways to deploy](https://www.cloudcarbonfootprint.org/docs/deploying) on those services, unlike for Azure.
 
 Note some important things:
 - Like all available tools, the CCF does only provide an estimation
-- It's accuracy will increase if you give it access to an [electricity maps](../analysis/overview_guide_existing_measurement_tools.md#electricity-maps) account. While the CCF is free and open source, electricity maps is a paid service
+- It's accuracy will increase if you give it access to an [electricity maps](https://www.electricitymaps.com) account. While the CCF is free and open source, electricity maps is a paid service
 - You need to give it at least "Reader" level access to you Azure subscription.
 - It has some limitations to its granularity. It will measure the energy usage of you whole k8s cluster, not pod by pod TODO check if there really isn't a way to do this
 
