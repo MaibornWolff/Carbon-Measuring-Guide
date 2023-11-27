@@ -317,18 +317,26 @@ one for first time visits, one for repeat visits in another column and do the sa
 Average them for the timeframe you have chosen to make the results meaningful. As long as your analytics data can provide 
 you with this data on a daily/hourly/etc. basis, this does not have to be the same timeframe over which you analyse the SCI. 
 You could e.g. average them daily and still analyse how your SCI changes over a month. Add your Rs for the analysed timeframe 
-from your analytics (e.g. API calls). Device the CO2eq average over your meaningful timeframe by Rs over that timeframe and 
+from your analytics (e.g. API calls). Device the CO2eq average over your meaningful timeframe by Rs over that timeframe, and 
 you have your SCI over time. Let's look at an example:
 
 ```
-You have data from you cluster over a month and have produced 2 metric tons of CO2eq. 
+You have data from you cluster over a month and have produced 0,2 metric tons of CO2eq. 
 Your website creates crates 4g of CO2eq per first time page load and 0,5g per load for repete visitors. 
 You had 1 000 000 visits this month. 200 000 first, 800 000 repet.
-You at times call to a an OpenAI based chatbot if customers on the website need support. Over this month they did this 5000 times.
+You at times call to a an OpenAI based chatbot if customers on the website need support. It produces 4g of CO2eq per call. Over this month they did this 5000 times.
 You avearge data over a day to make reduce the noise and make them meaningful. 
-Your R is visitors.
-You deployed an update on the 15th which you hoped will improve your performance.
-TODO TRi finish
+Your R is visits.
+You deployed an update on the 15th which you hoped will improve your performance. After it, your page load metrics change to 3,9g and 0,48g respectively.
+
+On the first of the month you had created 8,5kg of CO2eq from your cluster, you had 40 000 page visits, 8 000 firsts, 32 000 repete and you 200 calls to the chatbot. 
+It follows, your SCI on the first of this month was 1,4325g CO2eq per visit. 
+
+On the 16th of the month you had created 3,5kg of CO2eq from your cluster, you had 20 000 page visits, 4 000 firsts, 16 000 repete and you 100 calls to the chatbot.
+It follows, your SCI on the first of this month was 1,359g CO2eq per visit. 
+
+You would of course do this in Excel for every day of the timespan and create a graph based on it, that shows your SCI day by day. 
+However, based on these two, simplified data points your update has indeed made your application more effcient. 
 ```
 
-TODO TRi
+TODO TRi finish
