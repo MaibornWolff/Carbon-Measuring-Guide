@@ -303,4 +303,32 @@ to help us with that.
 
 #### The actual MW SCI calculation
 
+Now that you have chosen a functional unit (R), are measuring the CO2eq output of your cluster, have a sample for your website, values for calls to external 
+systems and analytics for your application that tell you quantity of your functional unit (over a period of time) you can calculate 
+your SCI. You can automate this, but doing it once every sprint change or PROD-deployment is enough. While choosing your functional 
+unit you will have also chosen a timeframe over which you want to average your energy consumption. Even if that timeframe is much 
+larger than the frequency of you SCI calculation, you can still do it just the same. 
+
+We will now go step by step along the manual path to calculating the SCI. Currently, we do not offer a template to automate 
+this, but might do so in the future. If you have done this in your project, please contact us. 
+
+Download the CSV from your Cloud Carbon Footprint Tool deployment. Use it as your basis and add the samples from your Website, 
+one for first time visits, one for repeat visits in another column and do the same for calls to external systems. 
+Average them for the timeframe you have chosen to make the results meaningful. As long as your analytics data can provide 
+you with this data on a daily/hourly/etc. basis, this does not have to be the same timeframe over which you analyse the SCI. 
+You could e.g. average them daily and still analyse how your SCI changes over a month. Add your Rs for the analysed timeframe 
+from your analytics (e.g. API calls). Device the CO2eq average over your meaningful timeframe by Rs over that timeframe and 
+you have your SCI over time. Let's look at an example:
+
+```
+You have data from you cluster over a month and have produced 2 metric tons of CO2eq. 
+Your website creates crates 4g of CO2eq per first time page load and 0,5g per load for repete visitors. 
+You had 1 000 000 visits this month. 200 000 first, 800 000 repet.
+You at times call to a an OpenAI based chatbot if customers on the website need support. Over this month they did this 5000 times.
+You avearge data over a day to make reduce the noise and make them meaningful. 
+Your R is visitors.
+You deployed an update on the 15th which you hoped will improve your performance.
+TODO TRi finish
+```
+
 TODO TRi
