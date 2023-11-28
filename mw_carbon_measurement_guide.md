@@ -5,7 +5,7 @@
 - [Introduction](#Introduction)
 - [Glossary](#Glossary)
 - [Software Carbon Intensity](#software-carbon-intensity)
-  - [Why we mostly use SCi, and when to use GHG](#why-we-mostly-use-sci-and-when-to-use-ghg)
+  - [Why we mostly use SCI, and when to use GHG](#why-we-mostly-use-sci-and-when-to-use-ghg)
   - [MW SCI Usage](#mw-sci-usage)
     - [Our Functional Units](#our-functional-units)
         - [How to choose your functional unit](#how-to-choose-your-functional-unit)
@@ -154,7 +154,7 @@ E.g. if we choose registered users as our R, a growing user base should not affe
 ```
 Let's again assume we are a weather forecasting service. But in this example, we make one large costly prediction calculation every day and cache it. Every time a user calls our API, the easy and cheap process of simply sending them that cached result is executed. 
 Only a negligible fraction of our total carbon costs is produced by handling the API calls. In this case using a functional unit like API calls or registered/daily users will lead to the following, undesirable situation: 
-As more users join, the daily carbon cost gets divided by a growing number of users/calls, **leading to our SCi falling without our software getting more efficient**. In this case, e.g. per day of application runtime would be a better R. 
+As more users join, the daily carbon cost gets divided by a growing number of users/calls, **leading to our SCI falling without our software getting more efficient**. In this case, e.g. per day of application runtime would be a better R. 
 On the other hand, per day of application runtime would be a poor R for any application that scales with an increase in users/calls. In such cases, an increase in users or their activity would increase the SCI without our application becoming less efficient. So, either the number of API calls or registered/active users would be a better R.
 ```
 
@@ -187,7 +187,7 @@ If we choose registered devices as our R for the whole system, we would not make
 
 If we choose API calls as our R - including writing to/reading from a Kafka topic as such - we would also not make a terrible decision, but would have to contend with the following problems: 
 1. Some services, like analytics services make very few API calls, but require a lot of computing power anyway, and their consumption is mostly not based on how many calls they get. 
-   This means that if the number of overall API calls to the system increases, the SCi gets better as the contribution of these services is devided by a larger number of calls
+   This means that if the number of overall API calls to the system increases, the SCI gets better as the contribution of these services is devided by a larger number of calls
 2. It creates no incentive to reduce unnecessary call/topic reads. In 2023 a large abount of RAM and CPU usage was saved by the voice-samrthome service by simply no longer processing 
    state change information that had no relevance to the service. This lowered its carbon output, but with API calls as an R, it would have not lowered its SCI score.
    
@@ -354,7 +354,7 @@ This would mean that if we continue to average our usage over a day, we would al
 In such a case we should start averaging not over a day, but a month to see more meaningful results over time. 
 ```
 
-As long as this section might have been, by now you hopefully see that calculating SCi scores is not complicated if you 
+As long as this section might have been, by now you hopefully see that calculating SCI scores is not complicated if you 
 have the necessary metrics at hand. We hope to see you again in our [carbon optimisation guide](TODO TRi link to guide)
 
 ### The authors
