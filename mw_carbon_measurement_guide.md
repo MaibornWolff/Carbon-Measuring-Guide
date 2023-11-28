@@ -241,7 +241,7 @@ The carbon footprint of your cluster will be decisive in many projects.
 
 Our first standard recommendation is the [Cloud-Carbon-Footprint-Tool](https://www.cloudcarbonfootprint.org/docs/methodology) by Thoughtworks.
 
-Currently, we only have a recommendation and [step-by-step](/setup_guides/cloud-carbon-footprint.md) guide for Azure hosted projects,
+Currently, we only have a recommendation and [step-by-step](/setup_guides/cloud-carbon-footprint.md#setup-and-steps-used-for-testingdeploying-in-a-virtual-machine) guide for Azure hosted projects,
 but the recommended tool also works for AWS and Google cloud, it even has [dedicated ways to deploy](https://www.cloudcarbonfootprint.org/docs/deploying) on those services, unlike for Azure.
 
 Note some important things:
@@ -262,6 +262,8 @@ TODO TRi talk about potential MW EM account with group and then potentially edit
 
 <a name="embodied-emissions-paragraph"></a>
 TODO TRi talk about embodied emissions here
+
+TODO TRi talk about known issues with tool here
 
 We recommend that you talk to your PO or potential customer and show them what the CCF can provide, by showing them the
 [dashboard of the Green-in-IT](http://mwgiitccf.westeurope.cloudapp.azure.com) project. If more convincing is needed,
