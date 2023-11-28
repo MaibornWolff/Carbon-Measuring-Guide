@@ -16,6 +16,7 @@
     - [Website emissions and efficiency](#website-emissions-and-efficiency)
     - [Emissions produced by external systems](#emissions-produced-by-external-systems)
     - [The actual MW SCI calculation](#the-actual-mw-sci-calculation)
+- [The authors](#the-authors)
 
 ### Introduction
 
@@ -30,14 +31,14 @@ for that take a look [here](TODO TRi add link to other guide). However, there is
 
 There is deeper knowledge on the topic available as well, which can be found in the documents we link to when discussing the relevant topics here.
 This is for the interested and not strictly required in order to practically apply our green software development approach in your projects. 
-For any questions and feedback, contact the members of the [MaibornWolff Green in IT project](TODO TRi link to what? Also, maybe Green Ivory Space?).
+For any questions and feedback, contact the members of the [MaibornWolff Green in IT project](#the-authors).
 
 ### Glossary
 
 | Term                  | Meaning                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | --------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | CO2eq / CO2-eq / CO2e | Carbon dioxide equivalent. This unit of measurement indicates the potential impact of CO2 and non-CO2 gases on global warming in carbon terms.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| gCO2eq/kWh            | Grams of carbon per kilowatt hour. The standard unit of carbon intensity is gCO2eq/kWh, or grams of carbon per kilowatt hour.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| gCO2eq/kWh            | Grams of carbon equivalent per kilowatt hour. The standard unit of carbon intensity is gCO2eq/kWh, or grams of carbon per kilowatt hour.                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | SCI                   | Software Carbon Intensity. A standard which gives an actionable approach to software designers, developers and operations to measure the carbon impacts of their systems.                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | Carbon intensity      | Carbon intensity measures how much carbon (CO2e) is emitted per kilowatt-hour (KWh) of electricity consumed. The standard unit of carbon intensity is gCO2eq/kWh, or grams of carbon per kilowatt hour.                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Carbon awareness      | Term to describe information about the differing levels of carbon intensity at differing places and times                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -61,7 +62,7 @@ and does not penalise up-front investments into carbon cost saving measures. We 
 more easily when we use SCI, both positive and negative. It also will not penalise growing the user base if the functional unit is chosen correctly.
 
 If you are working on a project that requires a very large upfront carbon investment, such as training a machine learning model, SCi might not suffice.
-In that case, please contact the [MaibornWolff Green in IT project](TODO TRi link to what? Also, maybe Green Ivory Space?) for advice.
+In that case, please contact the [MaibornWolff Green in IT project](#the-authors) for advice.
 
 #### MW SCI Usage
 
@@ -120,9 +121,11 @@ In addition to this, you should go through the following checks afterward and fr
 - If I apply this R, can it happen that by being more successful(more users sign up/devises register, more sales happen, etc.) I get a worse SCI? The answer should be NO!
 - If more users/devices/etc. become inactive but stay registered, can this decrease my SCI without me getting more efficient? The answer should be NO!
 - Does my SCI fluctuate without my software changing in relevant ways? The answer should be NO! Check this from time to time once the software is live and reassess if necessary
-- TODO TRi finish check questions
 
 ###### A more in depth look
+
+This section is not necessary if you could find what you needed through the one above. It provides a deeper look with examples 
+that you can read if you are having trouble with the one above or want a deeper understanding of the subject matter.
 
 The first step is, of course, to eliminate those units that don't make sense for the system. 
 E.g. if you have a system that receives requests from users that it answers with simple results consisting of only KBites worth of text.
@@ -286,8 +289,6 @@ you can now calculate an approximate value for the CO2eq usage of this part of t
 Use Ecograder because it not only gives you a score, but more so because it points you to the largest avoidable sources 
 of your CO2eq output. Ideally there would be a story after every PROD Deployment dedicated to reducing these based on the results.
 
-TODO TRi finish
-
 #### Emissions produced by external systems
 
 In this case external systems mean systems that are mont only not on our cluster, but fully outside our control. 
@@ -339,4 +340,23 @@ You would of course do this in Excel for every day of the timespan and create a 
 However, based on these two, simplified data points your update has indeed made your application more effcient. 
 ```
 
-TODO TRi finish
+As you can see in the example, a lower or higher number of visits does not affect our SCI, but changes in efficiency do. 
+A change in user behavior, such as users starting to use the chatbot more, would though. This is why we have to average results 
+over a meaningful timeframe and also be ready to reassess our chosen R if we observe large, unforeseen changes. 
+
+```
+Now lets assume that we over time observe that users tend to first visit at the beginning of a calendar month, and use the chatbot a lot at that time as well.
+This would mean that if we continue to average our usage over a day, we would always seem to get better over the course of a month and then get worse again at the beginning of the next one.
+In such a case we should start averaging not over a day, but a month to see more meaningful results over time. 
+```
+
+As long as this section might have been, by now you hopefully see that calculating SCi scores is not complicated if you 
+have the necessary metrics at hand. We hope to see you again in our [carbon optimisation guide](TODO TRi link to guide)
+
+### The authors
+
+This guide is a result of the MaibornWolff Green in IT project and was authored by in alphabetical order:
+
+Antonio Adrian antonio.adrian@maibornwolff.de
+Jochen Joswig jochen.joswig@maibornwolff.
+Tobias Rimmele tobias.rimmele@maibornwolff.de
