@@ -61,7 +61,7 @@ In short, we generally prefer SCI to GHG because it sets the right incentives fo
 and does not penalise up-front investments into carbon cost saving measures. We can also observe changes in our efficiency
 more easily when we use SCI, both positive and negative. It also will not penalise growing the user base if the functional unit is chosen correctly.
 
-If you are working on a project that requires a very large upfront carbon investment, such as training a machine learning model, SCi might not suffice.
+If you are working on a project that requires a very large upfront carbon investment, such as training a machine learning model, SCI might not suffice.
 In that case, please contact the [MaibornWolff Green in IT project](#the-authors) for advice.
 
 #### MW SCI Usage
@@ -121,6 +121,7 @@ In addition to this, you should go through the following checks afterward and fr
 - If I apply this R, can it happen that by being more successful(more users sign up/devises register, more sales happen, etc.) I get a worse SCI? The answer should be NO!
 - If more users/devices/etc. become inactive but stay registered, can this decrease my SCI without me getting more efficient? The answer should be NO!
 - Does my SCI fluctuate without my software changing in relevant ways? The answer should be NO! Check this from time to time once the software is live and reassess if necessary
+- Do we have good metrics for this functional unit? Can we e.g. count how many API calls we had and when? The answer MUST be YES!
 
 ###### A more in depth look
 
@@ -211,6 +212,9 @@ even if in some cases we might not be able to calculate how much carbon we save.
 In cases where we relay solely on the SCI, we will just measure the electricity usage and hardware utilisation of our pods running in our k8s cluster.
 In cases where we also need our total GHG score - [see here for when that is](#why-we-mostly-use-sci-and-when-to-use-ghg) - we will need to
 also measure several other components, including during our development process.
+
+We also of course need certain basic analytics about our application, specifically those that comprise our functional unit. 
+If e.g. our functional unit is active users, we need to be able to determine how many users we have and how many are active. 
 
 #### What we include, exclude and why
 
@@ -358,5 +362,7 @@ have the necessary metrics at hand. We hope to see you again in our [carbon opti
 This guide is a result of the MaibornWolff Green in IT project and was authored by in alphabetical order:
 
 Antonio Adrian antonio.adrian@maibornwolff.de
-Jochen Joswig jochen.joswig@maibornwolff.
+
+Jochen Joswig jochen.joswig@maibornwolff.de
+
 Tobias Rimmele tobias.rimmele@maibornwolff.de
