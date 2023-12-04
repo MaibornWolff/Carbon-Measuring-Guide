@@ -45,24 +45,32 @@ For any questions and feedback, contact the members of the [MaibornWolff Green i
 | Net zero              | Net zero means reducing emissions according to the latest climate science and balancing remaining residual emissions through carbon removals (neutralizations). Net zero, by definition, requires emissions reductions in line with a 1.5°C pathway. All businesses must do this to achieve net-zero global emissions by 2050. <br />The critical differentiator between net zero and carbon neutral is net zero's focus on abatement rather than neutralizations and compensations. A net-zero target aims to eliminate emissions and only to use offsetting for the residual emissions that you cannot eliminate |
 | GSF                   | [Green Software Foundation](https://greensoftware.foundation/manifesto)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | GHG protocol          | [Greenhouse Gas protocol](https://ghgprotocol.org/) - the most commonly-used method for organizations to measure their total carbon emissions                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| RAPL                  | Running Average Power Limit is a power estimation feature in modern x86 CPUs from Intel and AMD. n the green software community it is extensively used in order to get accurate energy measurements for the CPU and DRAM components.                                                                                                                                                                                                                                                                                                                                                                               |
 
 ### Software Carbon Intensity
 
 Software Carbon Intensity (SCI) is a methodology developed to score a software application along a dimension of sustainability and to encourage action towards eliminating emissions. 
 If you are interested in more than simply what you need to know for its application in a project, you can take a look either at our more detailed exploration [here](/deeper_foundations/overview_guide_measurement_practices.md#software-carbon-intensity)
 or take a look at the [definition](https://grnsft.org/SCI) provided by its creators, the Standards Working Group of the Green Software Foundation.
-Instead, we will discuss why we use it over a score of total carbon emissions (GHG) most of the time and how we use it in our projects.
+Instead, we will discuss why, most of the time, it is our number one metric, why give it even more importance than a score of total carbon emissions (GHG) and how we use it in our projects.
 
-#### Why we mostly use SCI, and when to use GHG
+#### Why SCI is the most important metric, and when to use GHG
 
 If you are interested in a deeper look into the pros and contras of SCI and GHG look [here](/deeper_foundations/overview_guide_measurement_practices.md#quantify).
-In short, we generally prefer SCI to GHG because it sets the right incentives for improving carbon efficiency over time 
+In short, we generally rank SCI higher in importance than GHG because it sets the right incentives for improving carbon efficiency over time 
 and does not penalise up-front investments into carbon cost saving measures. We can also observe changes in our efficiency
 more easily when we use SCI, both positive and negative. It also will not penalise growing the user base if the functional unit is chosen correctly.
 
-If you are working on a project that requires a very large upfront carbon investment, such as training a machine learning model, SCI might not suffice.
+However, if you are working on a project that requires a very large upfront carbon investment, such as training a machine learning model, 
+SCI might not suffice, and might even obscure your impact.
 In that case, please contact the [MaibornWolff Green in IT project](#the-authors) for advice.
+
+But even in cases where there is no such case of a large upfront carbon investment, you should not totally forget about GHG. 
+Tracking monthly/yearly GHG isn't much extra effort, as we will see later, but it might be important in some cases. 
+The first is regulatory compliance, such as in cases where carbon certificates have to be purchased, 
+or [ESG goals](https://www.climatepartner.com/en/news-insights/glossary/environmental-social-governance-esg) have to be met.
+
+So a project total GHG score is only needed in cases with large carbon investments such as AI model training, and in 
+all other cases we track SCI and monthly/yearly GHG.
 
 #### MW SCI Usage
 
@@ -84,6 +92,8 @@ Then we discuss what tools we like to use to [measure](#our-practical-measuremen
 and [what should be in- and excluded for this](#what-to-measure),
 what [tools to use to convert the measured energy into gCO2eq](#electricity-maps-paragraph) based on the location-based marginal carbon emissions (I),
 and lastly how to [measure the embodied emissions of a software system (M)](#embodied-emissions-paragraph) based on what must be included and what can be excluded for this.
+
+Also note that (E * I) + M over a chose timeframe is our GHG for that time. So there is no extra measuring effort in order to have both metrics available. 
 
 ##### Our Functional Units
 
@@ -209,8 +219,8 @@ Hardware usage is the second very important thing we can measure with relative e
 piece of equipment or its expected lifespan, maximising usage and minimising idle time caused by us is always the correct direction to take,
 even if in some cases we might not be able to calculate how much carbon we save.
 
-In cases where we relay solely on the SCI, we will just measure the electricity usage and hardware utilisation of our pods running in our k8s cluster.
-In cases where we also need our total GHG score - [see here for when that is](#why-we-mostly-use-sci-and-when-to-use-ghg) - we will need to
+In cases where we relay solely on the SCI and monthly/yearly GHG, we will just measure the electricity usage and hardware utilisation of everything hosted in our cloud environment.
+In cases where we also need our project total GHG score - [see here for when that is](#why-sci-is-the-most-important-metric-and-when-to-use-ghg) - we will need to
 also measure several other components, including during our development process.
 
 We also of course need certain basic analytics about our application, specifically those that comprise our functional unit. 
@@ -228,8 +238,8 @@ First lets get the easy decisions out of the way:
 - We definitely SHOULD NOT include carbon costs that were incurred when things like the fundamental infrastructure the internet runs on was created, the laptops we develop on were built, and other things that are very difficult to factor in
 
 Now with the easy decisions out of the way, we turn to the system boundaries and embodied emissions that are harder to define. 
-Generally for a common project, hosted on a cluster and with some sort of front end, 
-our system boundary will be the cluster and the browser/user interface. 
+Generally for a common project, hosted on a cloud provider platform and with some sort of front end, 
+our system boundary will be the cloud subscription and the browser/user interface. 
 In the following sections we explore how we actually measure the emissions produced by each 
 and also what to do about emissions produced by systems we call.
 
@@ -246,9 +256,9 @@ but the recommended tool also works for AWS and Google cloud, it even has [dedic
 
 Note some important things:
 - Like all available tools, the CCF does only provide an estimation
-- It's accuracy will increase if you give it access to an [electricity maps](https://www.electricitymaps.com) account. While the CCF is free and open source, electricity maps is a paid service
+- It's accuracy will increase if you give it access to an [electricity maps](https://www.electricitymaps.com) account. While the CCF is free and open source, electricity maps is a paid service. It offers a free trial, but this does not offer the necessary api endpoints for the CCF
 - You need to give it at least "Reader" level access to you Azure subscription.
-- It has some limitations to its granularity. It will measure the energy usage of you whole k8s cluster, not pod by pod TODO check if there really isn't a way to do this
+- It has some limitations to its granularity. It will measure the energy usage of you whole k8s cluster, not pod by pod TODO TRi check if there really isn't a way to do this
 
 So why the CCF? In short, it is easy to set up, gives you not only a good CO2eq estimation,
 but also your electricity usage and estimated cost, and works with all 3 big cloud providers.
@@ -324,8 +334,8 @@ one for first time visits, one for repeat visits in another column and do the sa
 Average them for the timeframe you have chosen to make the results meaningful. As long as your analytics data can provide 
 you with this data on a daily/hourly/etc. basis, this does not have to be the same timeframe over which you analyse the SCI. 
 You could e.g. average them daily and still analyse how your SCI changes over a month. Add your Rs for the analysed timeframe 
-from your analytics (e.g. API calls). Device the CO2eq average over your meaningful timeframe by Rs over that timeframe, and 
-you have your SCI over time. Let's look at an example:
+from your analytics (e.g. API calls). Add up all CQ2eq produced over a meaningful timeframe to get the GHG for that time 
+and divide it by Rs over that timeframe to get your SCI over time. Let's look at an example:
 
 ```
 You have data from you cluster over a month and have produced 0,2 metric tons of CO2eq. 
@@ -337,10 +347,10 @@ Your R is visits.
 You deployed an update on the 15th which you hoped will improve your performance. After it, your page load metrics change to 3,9g and 0,48g respectively.
 
 On the first of the month you had created 8,5kg of CO2eq from your cluster, you had 40 000 page visits, 8 000 firsts, 32 000 repete and you 200 calls to the chatbot. 
-It follows, your SCI on the first of this month was 1,4325g CO2eq per visit. 
+It follows, your GHG on the first of this month was 57,3kg CO2eq and your SCI was 1,4325g CO2eq per visit. 
 
 On the 16th of the month you had created 3,5kg of CO2eq from your cluster, you had 20 000 page visits, 4 000 firsts, 16 000 repete and you 100 calls to the chatbot.
-It follows, your SCI on the first of this month was 1,359g CO2eq per visit. 
+It follows, your GHG on the 16th of this month was 27,180kg CO2eq and the SCI was 1,359g CO2eq per visit. 
 
 You would of course do this in Excel for every day of the timespan and create a graph based on it, that shows your SCI day by day. 
 However, based on these two, simplified data points your update has indeed made your application more effcient. 
@@ -348,7 +358,8 @@ However, based on these two, simplified data points your update has indeed made 
 
 As you can see in the example, a lower or higher number of visits does not affect our SCI, but changes in efficiency do. 
 A change in user behavior, such as users starting to use the chatbot more, would though. This is why we have to average results 
-over a meaningful timeframe and also be ready to reassess our chosen R if we observe large, unforeseen changes. 
+over a meaningful timeframe and also be ready to reassess our chosen R if we observe large, unforeseen changes. You can also see
+that GHG is very much affected by a change in number of visitors, and how only relying on it would punish us for serving more customers.
 
 ```
 Now lets assume that we over time observe that users tend to first visit at the beginning of a calendar month, and use the chatbot a lot at that time as well.
