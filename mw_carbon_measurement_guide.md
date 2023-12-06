@@ -234,12 +234,16 @@ and how important it is to set the right incentives to improve the carbon effici
 First lets get the easy decisions out of the way:
 
 - We definitely NEED to measure all electricity used by all systems we have control over and convert that into gCO2eq.
-- We definitely SHOULD [in some way](#emissions-produced-by-external-systems) include electricity used by systems we make calls to, that are not under our control, as otherwise we would create an incentive to simply outsource carbon intensive calculations
-- We definitely SHOULD NOT include carbon costs that were incurred when things like the fundamental infrastructure the internet runs on was created, the laptops we develop on were built, and other things that are very difficult to factor in
+- We definitely SHOULD [in some way](#emissions-produced-by-external-systems) include electricity/carbon used/created by systems we make calls to, that are not under our control, as otherwise we would create an incentive to simply outsource carbon intensive calculations
+- We definitely SHOULD NOT include carbon costs that were incurred when things like the fundamental infrastructure the internet runs on was created, the laptops we develop on were built, and other things that are very difficult to factor in and would not help us create a incentive to become more efficient
 
 Now with the easy decisions out of the way, we turn to the system boundaries and embodied emissions that are harder to define. 
 Generally for a common project, hosted on a cloud provider platform and with some sort of front end, 
 our system boundary will be the cloud subscription and the browser/user interface. 
+
+Note that it is valid to define a system boundary that excludes things on the basis that they can't be properly 
+measured/calculated, as long as we openly and visibly acknowledge the limitations of our resulting score.
+
 In the following sections we explore how we actually measure the emissions produced by each 
 and also what to do about emissions produced by systems we call.
 
@@ -271,9 +275,20 @@ buy an electricity maps account.
 TODO TRi talk about potential MW EM account with group and then potentially edit here
 
 <a name="embodied-emissions-paragraph"></a>
-TODO TRi talk about embodied emissions here
+The CCF also factors in the embodied emissions of the cloud servers as explained [here](https://www.cloudcarbonfootprint.org/docs/embodied-emissions). 
+As embodied emissions often make up [majority of the emissions of a cluster](TODO Jochen link to source here) we can not ignore them, 
+so the CCF already factoring them in makes it again stand out.
 
-TODO TRi talk about known issues with tool here
+Sadly there are also some known issues with the tool. The project is actively maintained, and we have ourselves opened bug tickets for some and 
+offered solutions for others, so this list might be not always be up-to-date, even though we will try our best to keep it so.
+At time of writing in early December 2023, the known issues are:
+
+- The current available docker container/build for the client does not work/produce a reachable client. We know why, have commented on the issue and expect it to be fixed soon. Until then, we use the cloudcarbonfootprint/client:release-2023-10-17 image.
+- There is a graphics bug that shows the data always one day ahead. This does not affect the actual data stored in the database that can be downloaded as a .csv file, but is embarrassing nonetheless, as showing a customer a graph that contains data a day that has not happened yet might not inspire confidence in them.
+- Another graphics bug concerns the x-axis scaling of the graph showing the emission sources. The displayed percentages seem to be correct, but the x-axis is scaled in a way that shows the larges source to always be at 100%, no matter how small it may actually be. The rest is then scaled in proportion to that, giving every bar in the diagram a much larger percentage than they actually have. Luckily, the actual numbers are written right on the bars, mitigating the impact of the error
+
+As problematic as those errors might sound, the tool is very actively maintained, with 16 releases in 2023 alone, and a growing community around it, so we are very confident that 
+unlike your projects SCI, the future quality of the CCF will only go upward.
 
 We recommend that you talk to your PO or potential customer and show them what the CCF can provide, by showing them the
 [dashboard of the Green-in-IT](http://mwgiitccf.westeurope.cloudapp.azure.com) project. If more convincing is needed,
@@ -327,7 +342,7 @@ unit you will have also chosen a timeframe over which you want to average your e
 larger than the frequency of you SCI calculation, you can still do it just the same. 
 
 We will now go step by step along the manual path to calculating the SCI. Currently, we do not offer a template to automate 
-this, but might do so in the future. If you have done this in your project, please contact us. 
+this, but might do so in the future. If you have done this in your project, [please contact us](#the-authors). 
 
 Download the CSV from your Cloud Carbon Footprint Tool deployment. Use it as your basis and add the samples from your Website, 
 one for first time visits, one for repeat visits in another column and do the same for calls to external systems. 
