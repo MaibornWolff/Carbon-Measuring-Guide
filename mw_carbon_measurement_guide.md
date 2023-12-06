@@ -86,14 +86,14 @@ In this formula
 - M = Embodied emissions of a software system
 - R = Functional unit (e.g. carbon per additional user, API-call, ML job, etc)
 
+Note that (E * I) + M over a chose timeframe is our GHG for that time. So there is no extra measuring effort in order to have both metrics available.
+
 We will first have a look at what are [possible functional units (R)](#our-functional-units) and [how to choose them](#how-to-choose-your-functional-unit).
 
 Then we discuss what tools we like to use to [measure](#our-practical-measurement-and-calculation-approach) the energy consumed by a software system (E) 
 and [what should be in- and excluded for this](#what-to-measure),
 what [tools to use to convert the measured energy into gCO2eq](#electricity-maps-paragraph) based on the location-based marginal carbon emissions (I),
 and lastly how to [measure the embodied emissions of a software system (M)](#embodied-emissions-paragraph) based on what must be included and what can be excluded for this.
-
-Also note that (E * I) + M over a chose timeframe is our GHG for that time. So there is no extra measuring effort in order to have both metrics available. 
 
 ##### Our Functional Units
 
@@ -110,7 +110,7 @@ What are our recommended functional units and when should you choose one or the 
 - Data volume streamed to the user
 - Data volume/calculations processed by the application
 - Number of models/locations/etc. for which different calculations are required
-- Any combination/fraction of the above-mentioned
+- Any combination/fraction of the above-mentioned and whatever you can think of for a given project
 
 ###### How to choose your functional unit
 
