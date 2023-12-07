@@ -27,7 +27,7 @@ It is tailored towards projects we commonly develop, that are hosted in the clou
 Things like desktop applications and unusual edge cases are not discussed for now, but might be added in the future if there is demand for it.
 
 It will also provide you with some understanding of the subject of green software in general. It is not a guide focused on carbon optimisation,
-for that take a look [here](TODO TRi add link to other guide). However, there is some overlap by default, which will at times be discussed here as well. 
+for that take a look [here](https://gitlab.maibornwolff.de/ivory-space/green-in-it/carbon-optimisation-guide/-/blob/main/mw_carbon_optimisation_guide.md?ref_type=heads). However, there is some overlap by default, which will at times be discussed here as well. 
 
 There is deeper knowledge on the topic available as well, which can be found in the documents we link to when discussing the relevant topics here.
 This is for the interested and not strictly required in order to practically apply our green software development approach in your projects. 
@@ -383,7 +383,7 @@ In such a case we should start averaging not over a day, but a month to see more
 ```
 
 As long as this section might have been, by now you hopefully see that calculating SCI scores is not complicated if you 
-have the necessary metrics at hand. We hope to see you again in our [carbon optimisation guide](TODO TRi link to guide)
+have the necessary metrics at hand. We hope to see you again in our [carbon optimisation guide](https://gitlab.maibornwolff.de/ivory-space/green-in-it/carbon-optimisation-guide/-/blob/main/mw_carbon_optimisation_guide.md?ref_type=heads)
 
 ### The authors
 
