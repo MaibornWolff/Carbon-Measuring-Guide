@@ -5,7 +5,7 @@
 - [Introduction](#Introduction)
 - [Glossary](#Glossary)
 - [Software Carbon Intensity](#software-carbon-intensity)
-  - [Why we mostly use SCI, and when to use GHG](#why-we-mostly-use-sci-and-when-to-use-ghg)
+  - [Why we mostly use SCI, and when to use GHG](#why-sci-is-the-most-important-metric-and-when-to-use-ghg)
   - [MW SCI Usage](#mw-sci-usage)
     - [Our Functional Units](#our-functional-units)
         - [How to choose your functional unit](#how-to-choose-your-functional-unit)
