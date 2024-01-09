@@ -20,18 +20,23 @@
 
 ### Introduction
 
-This guide will give you a standard template for setting up a carbon emissions monitoring of your software project. It was written for the interested. It is not strictly required in order to practically apply our green software development approach in your projects.  It is designed to be a living document, please get in touch with the members of the [MaibornWolff Green in IT project](#the-authors), if you have ideas, questions feedback or additions.
+Welcome to the MaibornWolff green software carbon measurement recommendations guide. 
+This guide will give you a standard template for setting up a carbon emissions monitoring of your software project. 
+It was written for the interested and not restricted to MaibornWolff employees, but some of the linked sample projects intended to make the setup of tools easier are.
+To get access to those, please contact [the authors](#the-authors). 
+It is not strictly required in order to practically apply our green software development approach in your projects. 
+It is designed to be a living document, please get in touch with the members of the [MaibornWolff Green in IT project](#the-authors), if you have ideas, questions feedback or additions.
 
 This guide is tailored towards developers of projects that:
 - are hosted in the cloud,
-- are developed with popular tech-stack,
+- are developed with popular tech-stack.
 
 This guide does not applicable to the following kind of projects, yet:
-- client application (e.g.: mobile & desktops apps, thick clients, games),
+- client applications without a/only a small cloud hosted component (e.g.: mobile & desktops apps, thick clients, games),
 - (3D) experiences.
 
 It will also provide you with some understanding of the subject of green software in general. It is not a guide focused on carbon optimisation,
-for that take a look [here](https://gitlab.maibornwolff.de/ivory-space/green-in-it/carbon-optimisation-guide/-/blob/main/mw_carbon_optimisation_guide.md?ref_type=heads). However, there is some overlap by default, which will at times be discussed here as well. 
+a guide for this is in development. Watch this space for its release. However, there is some overlap by default, which will at times be discussed here as well. 
 
 ### Glossary
 
@@ -89,7 +94,10 @@ Note that (E * I) + M over a chose timeframe is our GHG for that time. So there 
 
 We will first have a look at what are [possible functional units (R)](#our-functional-units) and [how to choose them](#how-to-choose-your-functional-unit).
 
-Then we discuss what tools we like to use to [measure](#our-practical-measurement-and-calculation-approach) the energy consumed by a software system (E) and [what should be in- and excluded for this](#what-to-measure), what [tools to use to convert the measured energy into gCO2eq](#electricity-maps-paragraph) based on the location-based marginal carbon emissions (I), and lastly how to [measure the embodied emissions of a software system (M)](#embodied-emissions-paragraph), based on what must be included and what can be excluded for this.
+Then we discuss what tools we like to use to [measure](#our-practical-measurement-and-calculation-approach) the energy consumed by a software system (E) 
+and [what should be in- and excluded for this](#what-to-measure), what [tools to use to convert the measured energy into gCO2eq](#electricity-maps-paragraph) 
+based on the location-based marginal carbon emissions (I), and lastly how to [measure the embodied emissions of a software system (M)](#embodied-emissions-paragraph), 
+based on what must be included and what can be excluded for this.
 
 ##### Our Functional Units
 
@@ -118,7 +126,8 @@ But if you want to gain a better understanding or are faced with a more complex 
 ###### The heuristic way
 
 For ease of use with customers, we created a handy flow chart. It can be used together with a customer to have 
-a structure that you can lead them through, or you can guide them through these questions another way.
+a structure that you can lead them through, or you can guide them through these questions another way. We have also 
+put its contents into an even easier quiz, that we hope to make available to everyone soon. Watch this space for that. 
 
 <img alt="Our easy find your R flow chart" height="1000" src="/diagrams/simple_functional_unit_mermaid-diagram.svg" width="2600"/>
 
@@ -175,11 +184,11 @@ So when should you split? See how many of the following points apply:
 3. The usage levels of the services are so far apart that one would always overshadow the other, obscuring any improvements made in the efficiency of the latter, creating no incentive to improve it
 
 ```
-We will now, for an example, take a look at the Miele cloud project, and decide what we should do based on our recommendations. It has 
-- 4 different Voice services, targeted at 3 different voice smart-home assistants from different companies (Amazon: voice-smarthome & mcs-alexa, Google: mcs-google-assistant and AliGini: mcs-aligini-assistant), 
-- one service that helps with reporting the states of all connected devices to the various end user services, registering new devices, and communicating with the devices themselves (mcs-service), 
-- two apps developed by Miele itself but using the services developed by MW (Miele Smarthome & Miele RX-Scout),
-- one basically independent analytics service that is not embedded, but separate from the other services (mcs-analytics)
+We will now, for an example, take a look at the cloud project for an unnamed lage home appliances producer, and decide what we should do based on our recommendations. It has 
+- 4 different Voice services, targeted at 3 different voice smart-home assistants from different companies (Amazon, Google and AliGini), 
+- one service that helps with reporting the states of all connected devices to the various end user services, registering new devices, and communicating with the devices themselves, 
+- two apps developed by the customer itself, but using the services developed by us,
+- one basically independent analytics service that is not embedded, but separate from the other services
 - as well as various services that help with such things as authentication or directing requests to the correct geographical region and development stage namespace
 
 These services are also partly developed by different teams. They have massively different usage rates and perform different tasks. 
@@ -187,7 +196,7 @@ Some of the services constantly read from a Kafka topic that updates the states 
 Only a fraction of the users use the voice services, and the different voice services have strongly differing usage levels. 
 
 If we choose registered devices as our R for the whole system, we would not make a terrible decision, but would have to contend with the following problems: 
-1. The voice services that do not read from the Kafka topic for state updates, no longer play a significant role in our SCI, meaning their development teams have no incentive to make them more efficient.
+1. The voice services, that do not read from the Kafka topic for state updates, no longer play a significant role in our SCI, meaning their development teams have no incentive to make them more efficient.
 2. Clean-up of the database is now disincentivised, as entries of inactive devices will bring down the SCI, as they no longer create change events.
 3. Adding device types that have fewer state changes causes changes in our SCI that do not reflect any improvements in the software.
 
@@ -231,7 +240,7 @@ First lets get the easy decisions out of the way:
 
 - We definitely NEED to measure all electricity used by all systems we have control over and convert that into gCO2eq.
 - We definitely SHOULD [in some way](#emissions-produced-by-external-systems) include electricity/carbon used/created by systems we make calls to, that are not under our control, as otherwise we would create an incentive to simply outsource carbon intensive calculations
-- We definitely SHOULD NOT include carbon costs that were incurred when things like the fundamental infrastructure the internet runs on was created, the laptops we develop on were built, and other things that are very difficult to factor in and would not help us create a incentive to become more efficient
+- We definitely SHOULD NOT include carbon costs that were incurred when things like the fundamental infrastructure the internet runs on was created, the laptops we develop on were built, and other things that are very difficult to factor in and would not help us create an incentive to become more efficient
 
 Now with the easy decisions out of the way, we turn to the system boundaries and embodied emissions that are harder to define. 
 Generally for a common project, hosted on a cloud provider platform and with some sort of front end, 
@@ -258,7 +267,7 @@ Note some important things:
 - Like all available tools, the CCF does only provide an estimation
 - It's accuracy will increase if you give it access to an [electricity maps](https://www.electricitymaps.com) account. While the CCF is free and open source, electricity maps is a paid service. It offers a free trial, but this does not offer the necessary api endpoints for the CCF
 - You need to give it at least "Reader" level access to you Azure subscription.
-- It has some limitations to its granularity. It will measure the energy usage of you whole k8s cluster, not pod by pod TODO TRi check if there really isn't a way to do this
+- It has some limitations to its granularity. It will measure the energy usage of each service cloud, such as your k8s cluster, your databases, etc., not pod by pod, database instance by database instance
 
 So why the CCF? In short, it is easy to set up, gives you not only a good CO2eq estimation,
 but also your electricity usage and estimated cost, and works with all 3 big cloud providers.
@@ -268,11 +277,13 @@ This makes it easier to pitch to potential customers, and once they are happy wi
 buy an electricity maps account.
 
 <a name="electricity-maps-paragraph"></a>
-TODO TRi talk about potential MW EM account with group and then potentially edit here
+We are in talks with Watttime and Electricity maps regarding offers specifically for MaibornWolff. One shared account across several 
+customer projects seems to be a no-go for legal reasons, so for now each customer would have to but a license separately. 
+Watch this space for updates on the matter.
 
 <a name="embodied-emissions-paragraph"></a>
 The CCF also factors in the embodied emissions of the cloud servers as explained [here](https://www.cloudcarbonfootprint.org/docs/embodied-emissions). 
-As embodied emissions often make up [majority of the emissions of a cluster](TODO Jochen link to source here) we can not ignore them, 
+As embodied emissions often make up [majority of the emissions of a cluster](https://learn.greensoftware.foundation/hardware-efficiency/#embodied-carbon) we can not ignore them, 
 so the CCF already factoring them in makes it again stand out.
 
 Sadly there are also some known issues with the tool. The project is actively maintained, and we have ourselves opened bug tickets for some and 
@@ -379,7 +390,7 @@ In such a case we should start averaging not over a day, but a month to see more
 ```
 
 As long as this section might have been, by now you hopefully see that calculating SCI scores is not complicated if you 
-have the necessary metrics at hand. We hope to see you again in our [carbon optimisation guide](https://gitlab.maibornwolff.de/ivory-space/green-in-it/carbon-optimisation-guide/-/blob/main/mw_carbon_optimisation_guide.md?ref_type=heads)
+have the necessary metrics at hand. We hope to see you again in our carbon optimisation guide once it is available, watch this space for that.
 
 ### The authors
 

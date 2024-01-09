@@ -196,7 +196,7 @@ Follow these four steps to calculate your SCI score:
 
 - [Decide what to include](#Decide-what-to-include)
 - [Choose your functional unit](#choose-your-functional-unit)
-- [Decide how to measure your emissions](#decide-how-to-measure-your-emissions)
+- [Decide how to measure your emissions](#decide-how-to-measure-or-calculate-your-emissions)
 - [Quantify](#Quantify)
 
 ###### Decide what to include
@@ -282,5 +282,5 @@ SCI is not a replacement for the GHG protocol, but an additional metric that hel
 While the GHG protocol calculates the **total emissions**, the SCI is about calculating the **rate of emissions**.
 
 This is usually more useful for software projects, and creates better incentives in the long run to reduce carbon output, so we recommend to prioritizing SCI over GHG.
-However, as mentioned in the contra section of the [SCI: Pro and Contra](#SCI-pro-and-contra), projects with large upfront energy investments, such as training some kind of AI model (see e.g. training a Amazon Alexa Custom Skill), should additionally use GHG.
+However, as mentioned in the contra section of the [SCI: Pro and Contra](#SCI-pro-and-contra), projects with large upfront energy investments, such as training some kind of AI model (see e.g. training an Amazon Alexa Custom Skill), should give at least equal attention to GHG.
 
