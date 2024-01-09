@@ -20,18 +20,18 @@
 
 ### Introduction
 
-Welcome to the MaibornWolff green software carbon measurement recommendations guide. This guide will give you a standard template
-for how to set up an effective monitoring structure for the carbon emissions the software you are creating is producing. 
+This guide will give you a standard template for setting up a carbon emissions monitoring of your software project. It was written for the interested. It is not strictly required in order to practically apply our green software development approach in your projects.  It is designed to be a living document, please get in touch with the members of the [MaibornWolff Green in IT project](#the-authors), if you have ideas, questions feedback or additions.
 
-It is tailored towards projects we commonly develop, that are hosted in the cloud and use technologies common in our tech-stack.
-Things like desktop applications and unusual edge cases are not discussed for now, but might be added in the future if there is demand for it.
+This guide is tailored towards developers of projects that:
+- are hosted in the cloud,
+- are developed with popular tech-stack,
+
+This guide does not applicable to the following kind of projects, yet:
+- client application (e.g.: mobile & desktops apps, thick clients, games),
+- (3D) experiences.
 
 It will also provide you with some understanding of the subject of green software in general. It is not a guide focused on carbon optimisation,
 for that take a look [here](https://gitlab.maibornwolff.de/ivory-space/green-in-it/carbon-optimisation-guide/-/blob/main/mw_carbon_optimisation_guide.md?ref_type=heads). However, there is some overlap by default, which will at times be discussed here as well. 
-
-There is deeper knowledge on the topic available as well, which can be found in the documents we link to when discussing the relevant topics here.
-This is for the interested and not strictly required in order to practically apply our green software development approach in your projects. 
-For any questions and feedback, contact the members of the [MaibornWolff Green in IT project](#the-authors).
 
 ### Glossary
 
@@ -50,15 +50,14 @@ For any questions and feedback, contact the members of the [MaibornWolff Green i
 
 Software Carbon Intensity (SCI) is a methodology developed to score a software application along a dimension of sustainability and to encourage action towards eliminating emissions. 
 If you are interested in more than simply what you need to know for its application in a project, you can take a look either at our more detailed exploration [here](/deeper_foundations/overview_guide_measurement_practices.md#software-carbon-intensity)
-or take a look at the [definition](https://grnsft.org/SCI) provided by its creators, the Standards Working Group of the Green Software Foundation.
+or take a look at the [definition](https://grnsft.org/SCI) provided by the Standards Working Group of the Green Software Foundation.
 Instead, we will discuss why, most of the time, it is our number one metric, why give it even more importance than a score of total carbon emissions (GHG) and how we use it in our projects.
 
 #### Why SCI is the most important metric, and when to use GHG
 
-If you are interested in a deeper look into the pros and contras of SCI and GHG look [here](/deeper_foundations/overview_guide_measurement_practices.md#quantify).
-In short, we generally rank SCI higher in importance than GHG because it sets the right incentives for improving carbon efficiency over time 
-and does not penalise up-front investments into carbon cost saving measures. We can also observe changes in our efficiency
-more easily when we use SCI, both positive and negative. It also will not penalise growing the user base if the functional unit is chosen correctly.
+If you are interested in a deeper look into the pros and cons of SCI and GHG look [here](/deeper_foundations/overview_guide_measurement_practices.md#quantify).
+In short, we generally rank SCI higher in importance than GHG, because it sets the right incentives for improving carbon efficiency over time and does not penalise up-front investments into carbon cost saving measures.
+We can also observe changes in our efficiency more easily when we use SCI, both positive and negative. It also will not penalise growing the user base if the functional unit is chosen correctly.
 
 However, if you are working on a project that requires a very large upfront carbon investment, such as training a machine learning model, 
 SCI might not suffice, and might even obscure your impact.
@@ -90,10 +89,7 @@ Note that (E * I) + M over a chose timeframe is our GHG for that time. So there 
 
 We will first have a look at what are [possible functional units (R)](#our-functional-units) and [how to choose them](#how-to-choose-your-functional-unit).
 
-Then we discuss what tools we like to use to [measure](#our-practical-measurement-and-calculation-approach) the energy consumed by a software system (E) 
-and [what should be in- and excluded for this](#what-to-measure),
-what [tools to use to convert the measured energy into gCO2eq](#electricity-maps-paragraph) based on the location-based marginal carbon emissions (I),
-and lastly how to [measure the embodied emissions of a software system (M)](#embodied-emissions-paragraph) based on what must be included and what can be excluded for this.
+Then we discuss what tools we like to use to [measure](#our-practical-measurement-and-calculation-approach) the energy consumed by a software system (E) and [what should be in- and excluded for this](#what-to-measure), what [tools to use to convert the measured energy into gCO2eq](#electricity-maps-paragraph) based on the location-based marginal carbon emissions (I), and lastly how to [measure the embodied emissions of a software system (M)](#embodied-emissions-paragraph), based on what must be included and what can be excluded for this.
 
 ##### Our Functional Units
 
