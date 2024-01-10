@@ -1,9 +1,9 @@
 # Green in IT Comparative Overview of Carbon Footprint Measurement Practices in the IT Landscape
 
-This guide will give a comparative overview of the currently, commonly used measurement practices for the carbon footprint in the IT landscape. 
-Based on this overview and those that can be found in the overview guide for existing tools and the overview guide for scientific results, 
-the MaibornWolff project recommendation guide will then recommend an approach to use in IT projects that is 
-both thorough and simple enough to be meaningful in its result and practical in its application. 
+This guide will give a comparative overview of the currently, commonly used measurement practices for the carbon footprint in the IT landscape.
+Based on this overview and those that can be found in the overview guide for existing tools and the overview guide for scientific results,
+the MaibornWolff project recommendation guide will then recommend an approach to use in IT projects that is
+both thorough and simple enough to be meaningful in its result and practical in its application.
 
 ## Table of Contents
 
@@ -16,10 +16,10 @@ both thorough and simple enough to be meaningful in its result and practical in 
     - [GHG: Pro and Contra](#ghg-pro-and-contra)
   - [Software Carbon Intensity](#Software-Carbon-Intensity)
     - [How to calculate your SCI score](#how-to-calculate-your-SCI-score)
-        - [Decide what to include](#decide-what-to-include)
-          - [Choose your functional unit](#choose-your-functional-unit)
-          - [Decide how to measure or calculate your emissions](#decide-how-to-measure-or-calculate-your-emissions)
-          - [Quantify](#quantify)
+      - [Decide what to include](#decide-what-to-include)
+        - [Choose your functional unit](#choose-your-functional-unit)
+        - [Decide how to measure or calculate your emissions](#decide-how-to-measure-or-calculate-your-emissions)
+        - [Quantify](#quantify)
     - [SCI: Pro and Contra](#SCI-pro-and-contra)
   - [Measurement comparison: Prioritising SCI over GHG](#measurement-comparison-prioritising-SCI-over-ghg)
 
@@ -43,16 +43,16 @@ both thorough and simple enough to be meaningful in its result and practical in 
 
 #### Singular impacts
 
-| Property                   | Most common unit(s)                                          |
-| -------------------------- | ------------------------------------------------------------ |
-| Electricity usage          | kW/h                                                         |
-| Carbon footprint           | gCO2eq/kWh                                                   |
-| Water usage                | Liter or m^3                                                 |
-| Land usage                 | m^2 or hectare                                               |
-| Air Quality                | Combination of different airborne compounds and gasses usually measured in parts per million. <br />Common compounds measured include, but are not limited to Ozone, Nitrogen Oxides, Sulfur Dioxide, Carbon Monoxide, Volatile Organics (includes many different compounds) |
-| Solid waste products       | Combination of different solid compounds usually measured in kg or tonnes, or a mass per volume unit such as mg/m^3. <br />Common categories measured include, but are not limited to plastics (includes many different compounds), Controlled solid waste (includes many different compounds) or just overall solid waste, such as common household waste. |
-| Environmental heavy metals | Environmental heavy metals such as chromium, arsenic, cadmium, mercury, and lead are usually tracked seperatly from other solid waste products. The unit is also either kg or tonnes, or a mass per volume unit such as mg/m^3<br />Note that there are also nutritionally essential heavy metals heavy metals such as iron, which can still be damaging when ingested in to high quantities. However, the five mentioned above are usually tracked the most |
-| Polluted/unsafe Water      | Note that this is different from just water usage. Water used in e.g. agriculture gets used up, but at some point again becomes part of the water cycle. Polluted or unsafe water has been made unsafe for consumption or usage by being mixed with various substances that make it unsafe. Usually measured either in liter of m^3 |
+| Property                   | Most common unit(s)                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Electricity usage          | kW/h                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Carbon footprint           | gCO2eq/kWh                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Water usage                | Liter or m^3                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Land usage                 | m^2 or hectare                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Air Quality                | Combination of different airborne compounds and gasses usually measured in parts per million. <br />Common compounds measured include, but are not limited to Ozone, Nitrogen Oxides, Sulfur Dioxide, Carbon Monoxide, Volatile Organics (includes many different compounds)                                                                                                                                                                                  |
+| Solid waste products       | Combination of different solid compounds usually measured in kg or tonnes, or a mass per volume unit such as mg/m^3. <br />Common categories measured include, but are not limited to plastics (includes many different compounds), Controlled solid waste (includes many different compounds) or just overall solid waste, such as common household waste.                                                                                                   |
+| Environmental heavy metals | Environmental heavy metals such as chromium, arsenic, cadmium, mercury, and lead are usually tracked separately from other solid waste products. The unit is also either kg or tonnes, or a mass per volume unit such as mg/m^3<br />Note that there are also nutritionally essential heavy metals heavy metals such as iron, which can still be damaging when ingested in to high quantities. However, the five mentioned above are usually tracked the most |
+| Polluted/unsafe Water      | Note that this is different from just water usage. Water used in e.g. agriculture gets used up, but at some point again becomes part of the water cycle. Polluted or unsafe water has been made unsafe for consumption or usage by being mixed with various substances that make it unsafe. Usually measured either in liter of m^3                                                                                                                           |
 
 #### Combined impact scores
 
@@ -74,26 +74,26 @@ Not all the above-mentioned metrics lend themselves well to IT projects. A metri
 - Be (somewhat) future-proof and expanded upon/integrated into an even better metric
 - Have a universally agreed upon definition and clear meaning to all who read it
 
-Electricity usage is the base metric for IT projects. The Carbon footprint can (mostly, see chapter on [hardware efficiency](#hardware-efficiency)) be calculated based on it if [carbon awareness](#carbon-awareness) is considered. All other metrics and impact scores can either be considered secondary in priority to electricity usage, in part derived from it, or electricity usage/a derived value of it will be part of a larger score. See the [project recommendation guide](../recommendations/mw_project_recommendation_guide.md#what-to-measure) for more details on what our conclusions are for when to use what. 
+Electricity usage is the base metric for IT projects. The Carbon footprint can (mostly, see chapter on [hardware efficiency](#hardware-efficiency)) be calculated based on it if [carbon awareness](#carbon-awareness) is considered. All other metrics and impact scores can either be considered secondary in priority to electricity usage, in part derived from it, or electricity usage/a derived value of it will be part of a larger score. See the [project recommendation guide](../README.md#what-to-measure) for more details on what our conclusions are for when to use what.
 
 ### Carbon awareness
 
-Since not all electricity is generated in the same way, we need to factor into our calculations how much CO2eq was used to create each KW/h we measure/calculate. The standard unit of carbon intensity is gCO2eq/kWh. Carbon intensity varies by location and time. 
+Since not all electricity is generated in the same way, we need to factor into our calculations how much CO2eq was used to create each KW/h we measure/calculate. The standard unit of carbon intensity is gCO2eq/kWh. Carbon intensity varies by location and time.
 
 Location matters because on every grid is fed by the same mix of sources, some being much more carbon intensive than others. But even within the same location, what the individual users energy mix consist of, and hence their carbon intensity, can be changed by changing the sources they buy from within that grids energy market. We will not go in depth regarding the purchasing agreements of electricity from a specific mix of sources as it is of low relevance for our project, but for more on the topic see [here](https://learn.greensoftware.foundation/climate-commitments).
 
-Both time in terms of the date of the year, and the time of day play a role. E.g. within a grid that is partially fed by solar panels, the carbon intensity might be lower in summer during the day, than during the night or in winter, since solar panels are a low carbon energy source. But what the available energy mix is at a given time, is not static. For this we need to take a look at [dispatchability and curtailment. A more in depth explanation can be found in the linked section](https://learn.greensoftware.foundation/carbon-awareness#dispatchability--curtailment), but in summery, dispatchability is how fast an energy source can come online and curtailment means throwing away energy when production outweighs demand. Not causing sudden and large spikes or drops in demand, helps avoid both. 
+Both time in terms of the date of the year, and the time of day play a role. E.g. within a grid that is partially fed by solar panels, the carbon intensity might be lower in summer during the day, than during the night or in winter, since solar panels are a low carbon energy source. But what the available energy mix is at a given time, is not static. For this we need to take a look at [dispatchability and curtailment. A more in depth explanation can be found in the linked section](https://learn.greensoftware.foundation/carbon-awareness#dispatchability--curtailment), but in summery, dispatchability is how fast an energy source can come online and curtailment means throwing away energy when production outweighs demand. Not causing sudden and large spikes or drops in demand, helps avoid both.
 
-These concepts open up requirements for how we calculate our emissions and possibilities to save CO2eq without further lowering our energy usage. It is vital for getting us to net-zero, as we will always need to use some amount of energy, and currently most grids by themselves are not net zero. For a more in depth look on how to use the concept of carbon awareness, check out [this guide by the Green Software Foundation](https://learn.greensoftware.foundation/carbon-awareness#how-to-be-more-carbon-aware). 
+These concepts open up requirements for how we calculate our emissions and possibilities to save CO2eq without further lowering our energy usage. It is vital for getting us to net-zero, as we will always need to use some amount of energy, and currently most grids by themselves are not net zero. For a more in depth look on how to use the concept of carbon awareness, check out [this guide by the Green Software Foundation](https://learn.greensoftware.foundation/carbon-awareness#how-to-be-more-carbon-aware).
 
-In short, we can reduce carbon significantly - [45% to 99% carbon reductions depending on the number of renewables powering the grid](https://ieeexplore.ieee.org/document/6128960)- by what is called demand shifting. Demand shifting basically just means doing as much work when - temporal shifting - and where - spatial shifting - the produced energy is as green as possible, while trying to absorb as much energy that would otherwise be curtailed, and without causing spikes in demand that would require quickly dispatchable, dirty energy sources to come online. 
+In short, we can reduce carbon significantly - [45% to 99% carbon reductions depending on the number of renewables powering the grid](https://ieeexplore.ieee.org/document/6128960)- by what is called demand shifting. Demand shifting basically just means doing as much work when - temporal shifting - and where - spatial shifting - the produced energy is as green as possible, while trying to absorb as much energy that would otherwise be curtailed, and without causing spikes in demand that would require quickly dispatchable, dirty energy sources to come online.
 
 As per the Green Software Foundation, "some of the biggest technology companies have recognized the importance of carbon awareness and are using advanced modeling techniques to implement demand shifting."
 
 - **Google Carbon Aware Data Centers** - Google launched a project to [make some of the cloud workloads carbon aware](https://blog.google/outreach-initiatives/sustainability/carbon-aware-computing-location/). They created models to predict tomorrow's carbon intensity and workload. They then shaped large-scale workloads so more would happen when and where the carbon intensity is lowest, but in such a way that they could still handle the expected load.
 - **Microsoft Carbon Aware Windows** - [Microsoft announced a project to make Windows 11 more sustainable](https://www.techradar.com/news/windows-11-is-getting-an-eco-friendly-update-but-could-microsoft-do-more). Initially, this means running Windows updates when the carbon intensity is lower.
 
-Additionally, there is the concept of [demand shaping](https://learn.greensoftware.foundation/carbon-awareness#demand-shaping), a sort of sister concept to demand shifting. As per the GSF, "demand shifting is the strategy of moving computation to regions or times when the carbon intensity is lowest. Demand shaping is a similar strategy. However, instead of moving demand to a different region or time, we shape our computation to match the existing supply." Meaning, if carbon intensity is low, increase the demand; do more in your applications and vise versa. This can happen automatically, or the user can make a choice. 
+Additionally, there is the concept of [demand shaping](https://learn.greensoftware.foundation/carbon-awareness#demand-shaping), a sort of sister concept to demand shifting. As per the GSF, "demand shifting is the strategy of moving computation to regions or times when the carbon intensity is lowest. Demand shaping is a similar strategy. However, instead of moving demand to a different region or time, we shape our computation to match the existing supply." Meaning, if carbon intensity is low, increase the demand; do more in your applications and vise versa. This can happen automatically, or the user can make a choice.
 
 The limitation with this is of course, that applications are often limited in what they can do in this regard, especially when it comes to automatic implementations, as companies often want to avoid impacting the user experience without consulting the user first. However, there are cases that show that this is still a very valuable concept. Examples given by the GSF include
 
@@ -101,15 +101,15 @@ The limitation with this is of course, that applications are often limited in wh
 - TCP/IP. The transfer speed increases in response to how much data is broadcast over the wire.
 - Progressive enhancement with the web. The web experience improves depending on the resources and bandwidth available on the end user’s device.
 
-We can also ask the user to consent to an eco-mode in our application, which will reduce performance, but save carbon and money. 
+We can also ask the user to consent to an eco-mode in our application, which will reduce performance, but save carbon and money.
 
 ### Hardware efficiency
 
-While the hardware used in cloud computing is not under the customers control, there are still ways to calculate its effect into our emissions metrics, and measures we can take to lower that impact. But how does hardware have an impact on our emissions besides the energy it uses to run? The answer is [embodied carbon](https://learn.greensoftware.foundation/hardware-efficiency#embodied-carbon). "Embodied carbon (also referred to as "embedded carbon") is the amount of carbon pollution emitted during the creation and disposal of a device. When calculating the total carbon pollution for computers running software, both the carbon pollution associated with running the computer as well as the embodied carbon of the computer must be accounted for." 
+While the hardware used in cloud computing is not under the customers control, there are still ways to calculate its effect into our emissions metrics, and measures we can take to lower that impact. But how does hardware have an impact on our emissions besides the energy it uses to run? The answer is [embodied carbon](https://learn.greensoftware.foundation/hardware-efficiency#embodied-carbon). "Embodied carbon (also referred to as "embedded carbon") is the amount of carbon pollution emitted during the creation and disposal of a device. When calculating the total carbon pollution for computers running software, both the carbon pollution associated with running the computer as well as the embodied carbon of the computer must be accounted for."
 
-Of course, we need to [amortize](https://learn.greensoftware.foundation/hardware-efficiency#amortization) this amount over its average lifespan and only add the amount for our usage time to our score. The time we use it is of course known to us, but the initial CO2eq cost of its construction is a bit harder to find. There will be more in the [tools guide](#TODO an link to relevant tools section later) on this, but in short, for some cloud providers, values can be obtained. 
+Of course, we need to [amortize](https://learn.greensoftware.foundation/hardware-efficiency#amortization) this amount over its average lifespan and only add the amount for our usage time to our score. The time we use it is of course known to us, but the initial CO2eq cost of its construction is a bit harder to find. There will be more in the [practical part of the guide](../README.md#our-practical-measurement-and-calculation-approach) on this, but in short, for some cloud providers, values can be obtained.
 
-So how can we have an impact? More details can be found [here](https://learn.greensoftware.foundation/hardware-efficiency#how-to-improve-hardware-efficiency), but in short, increasing the utilization of each device, so e.g. using 100% of one device instead of 25% of 4 is much better, as the lifespan of a device will be roughly the same either way, but this way only demand for one device to be manufactured is created. Public clouds are much better at this than private clouds, by default, but our setting can have an impact here as well. 
+So how can we have an impact? More details can be found [here](https://learn.greensoftware.foundation/hardware-efficiency#how-to-improve-hardware-efficiency), but in short, increasing the utilization of each device, so e.g. using 100% of one device instead of 25% of 4 is much better, as the lifespan of a device will be roughly the same either way, but this way only demand for one device to be manufactured is created. Public clouds are much better at this than private clouds, by default, but our setting can have an impact here as well.
 
 ### Measurement
 
@@ -123,7 +123,7 @@ The GHG protocol divides emissions into three scopes:
 - **Scope 2**: Indirect emissions related to **emission generation of purchased energy**, such as heat and electricity.
 - **Scope 3**: Other indirect emissions from all the other activities you are engaged in. Including all **emissions from an organization's supply chain;** business travel for employees, and the electricity customers may consume when using your product.
 
-Scope 1 is irrelevant for our purposes. Scope 2 is only relevant if the project uses a private of Hybrid Cloud. Otherwise our emissions fall into scope 3. 
+Scope 1 is irrelevant for our purposes. Scope 2 is only relevant if the project uses a private of Hybrid Cloud. Otherwise our emissions fall into scope 3.
 
 For both a public cloud, and a front end, our CO2eq will come from both embodied emissions and the energy consumed when running it, wit both falling under scope 3. In case of a private cloud, its consumed energy falls under scope 2 and its embodied energy under scope 3.
 
@@ -141,24 +141,24 @@ Open-source projects typically have multiple contributors from multiple organiza
 
 ##### GHG: Pro and Contra
 
-But is the total even what we need? Is it the best metric by which we should judge our efforts to reduce our footprint? 
+But is the total even what we need? Is it the best metric by which we should judge our efforts to reduce our footprint?
 Take [this](https://learn.greensoftware.foundation/measurement#do-totals-tell-the-whole-story) scenario from the GSF:
 
 "A total is only one metric that describes the state of something. To make the right decisions, you need to look at many different metrics.
 
-Imagine a scenario where you are the leader of an organization and charged with reducing the emissions of your software. 
-You measure the emissions in Q1 and come out with a total of 34 tonnes. After making some investments into projects that eliminate emissions, 
+Imagine a scenario where you are the leader of an organization and charged with reducing the emissions of your software.
+You measure the emissions in Q1 and come out with a total of 34 tonnes. After making some investments into projects that eliminate emissions,
 you find that by Q2 the emissions have increased to 45 tonnes. Does this mean your efforts failed?
 
-Not necessarily. We know that a total by itself doesn't tell the whole story and must look at other metrics to find out 
-if an emissions-reduction project has been successful. For example, if you measured the carbon intensity as well as the carbon total, 
-you might come out with a different perspective. In the same project, if the carbon intensity was 3.3g CO2eq/user in Q1, 
+Not necessarily. We know that a total by itself doesn't tell the whole story and must look at other metrics to find out
+if an emissions-reduction project has been successful. For example, if you measured the carbon intensity as well as the carbon total,
+you might come out with a different perspective. In the same project, if the carbon intensity was 3.3g CO2eq/user in Q1,
 and 2.9g CO2eq/user in Q2, you might consider the project a success and continue to invest further.
 
-While the total informed you that your organization's carbon emissions had increased overall, 
+While the total informed you that your organization's carbon emissions had increased overall,
 the intensity gave a more complete perspective that would help you to make a more informed decision on how to proceed."
 
-To summarise: 
+To summarise:
 Pros:
 
 - Nothing is missed, all sources though out the whole lifecycle of the product are taken into account
@@ -172,7 +172,7 @@ Cons:
 
 #### Software Carbon Intensity
 
-The [Software Carbon Intensity (SCI) specification](https://grnsft.org/SCI) is a methodology developed by the Standards Working Group of the Green Software Foundation, designed to score a software application along a dimension of sustainability and to encourage action towards eliminating emissions. 
+The [Software Carbon Intensity (SCI) specification](https://grnsft.org/SCI) is a methodology developed by the Standards Working Group of the Green Software Foundation, designed to score a software application along a dimension of sustainability and to encourage action towards eliminating emissions.
 It will form the basis for assessing the effectiveness of our decisions and actions. Why will be shown once we understand how to calculate it, as well as some important concepts regarding carbon efficiency.
 
 The SCI is calculated as follows:
@@ -227,12 +227,12 @@ There are two methods of quantification; measurement and calculation.
 
 In the case of applications running in the cloud, you will be faced with one of these two scenarios:
 
-1. The cloud provider or a third party has measurement tools available. You will find a list of tools [here](./overview_guide_existing_measurement_tools.md).
+1. The cloud provider or a third party has measurement tools available. You will find a list of tools [here](https://gitlab.maibornwolff.de/ivory-space/green-in-it/documentation/-/blob/main/analysis/overview_guide_existing_measurement_tools.md?ref_type=heads).
 2. No such tooling is available, then you will either have to estimate consumption. You can do this either based on
-    1. proxy metrics, which the cloud provider reports such as: details from your bill, the amount of storage or compute used, the amount of data transferred, the number of requests/invokes, or
-    2. based on tests and measurements you run on devices, which you have control over.
+  1. proxy metrics, which the cloud provider reports such as: details from your bill, the amount of storage or compute used, the amount of data transferred, the number of requests/invokes, or
+  2. based on tests and measurements you run on devices, which you have control over.
 
-In case of desktop or other locally run application, as well as the local/end-user component of an application, measurements are much more realistic. Tools like [Scaphandre](./overview_guide_existing_measurement_tools.md#scaphandre) can help with this, reducing the initial effort needed to set up the measuring infrastructure.
+In case of desktop or other locally run application, as well as the local/end-user component of an application, measurements are much more realistic. Tools like [Scaphandre](https://gitlab.maibornwolff.de/ivory-space/green-in-it/documentation/-/blob/main/analysis/overview_guide_existing_measurement_tools.md?ref_type=heads#Scaphandre) can help with this, reducing the initial effort needed to set up the measuring infrastructure.
 
 ###### Quantify
 

@@ -8,35 +8,35 @@
   - [Why we mostly use SCI, and when to use GHG](#why-sci-is-the-most-important-metric-and-when-to-use-ghg)
   - [MW SCI Usage](#mw-sci-usage)
     - [Our Functional Units](#our-functional-units)
-        - [How to choose your functional unit](#how-to-choose-your-functional-unit)
+      - [How to choose your functional unit](#how-to-choose-your-functional-unit)
 - [What to measure](#what-to-measure)
   - [What we include, exclude and why](#what-we-include-exclude-and-why)
 - [Our Practical Measurement and Calculation Approach](#our-practical-measurement-and-calculation-approach)
-    - [Cluster carbon measurement/estimation](#cluster-carbon-measurementestimation)
-    - [Website emissions and efficiency](#website-emissions-and-efficiency)
-    - [Emissions produced by external systems](#emissions-produced-by-external-systems)
-    - [The actual MW SCI calculation](#the-actual-mw-sci-calculation)
+  - [Cluster carbon measurement/estimation](#cluster-carbon-measurementestimation)
+  - [Website emissions and efficiency](#website-emissions-and-efficiency)
+  - [Emissions produced by external systems](#emissions-produced-by-external-systems)
+  - [The actual MW SCI calculation](#the-actual-mw-sci-calculation)
 - [The authors](#the-authors)
 
 ### Introduction
 
-Welcome to the MaibornWolff green software carbon measurement recommendations guide. 
-This guide will give you a standard template for setting up a carbon emissions monitoring of your software project. 
-It was written for the interested and not restricted to MaibornWolff employees, but some of the linked sample projects intended to make the setup of tools easier are.
-To get access to those, please contact [the authors](#the-authors). 
-It is not strictly required in order to practically apply our green software development approach in your projects. 
-It is designed to be a living document, please get in touch with the members of the [MaibornWolff Green in IT project](#the-authors), if you have ideas, questions feedback or additions.
+Welcome to the MaibornWolff green software carbon measurement recommendations guide.
+This guide will give you a standard template for setting up a carbon emissions monitoring of your software project.
+It was written for the interested and not restricted to MaibornWolff employees, but some of the linked sample projects intended to make the setup of tools easier, are.
+To get access to those, please contact [the authors](#the-authors).
+It is not strictly required in order to practically apply our green software development approach in your projects.
+It is designed to be a living document, please get in touch with the members of the [MaibornWolff Green in IT project](#the-authors), if you have ideas, questions, feedback or additions.
 
 This guide is tailored towards developers of projects that:
 - are hosted in the cloud,
-- are developed with popular tech-stack.
+- are developed with a popular tech-stack.
 
-This guide does not applicable to the following kind of projects, yet:
+This guide does not yet applicable to the following kind of projects:
 - client applications without a/only a small cloud hosted component (e.g.: mobile & desktops apps, thick clients, games),
 - (3D) experiences.
 
 It will also provide you with some understanding of the subject of green software in general. It is not a guide focused on carbon optimisation,
-a guide for this is in development. Watch this space for its release. However, there is some overlap by default, which will at times be discussed here as well. 
+a guide for this is in development. Watch this space for its release. However, there is some overlap by default, which will at times be discussed here as well.
 
 ### Glossary
 
@@ -53,7 +53,7 @@ a guide for this is in development. Watch this space for its release. However, t
 
 ### Software Carbon Intensity
 
-Software Carbon Intensity (SCI) is a methodology developed to score a software application along a dimension of sustainability and to encourage action towards eliminating emissions. 
+Software Carbon Intensity (SCI) is a methodology developed to score a software application along a dimension of sustainability and to encourage action towards eliminating emissions.
 If you are interested in more than simply what you need to know for its application in a project, you can take a look either at our more detailed exploration [here](/deeper_foundations/overview_guide_measurement_practices.md#software-carbon-intensity)
 or take a look at the [definition](https://grnsft.org/SCI) provided by the Standards Working Group of the Green Software Foundation.
 Instead, we will discuss why, most of the time, it is our number one metric, why give it even more importance than a score of total carbon emissions (GHG) and how we use it in our projects.
@@ -64,16 +64,16 @@ If you are interested in a deeper look into the pros and cons of SCI and GHG loo
 In short, we generally rank SCI higher in importance than GHG, because it sets the right incentives for improving carbon efficiency over time and does not penalise up-front investments into carbon cost saving measures.
 We can also observe changes in our efficiency more easily when we use SCI, both positive and negative. It also will not penalise growing the user base if the functional unit is chosen correctly.
 
-However, if you are working on a project that requires a very large upfront carbon investment, such as training a machine learning model, 
+However, if you are working on a project that requires a very large upfront carbon investment, such as training a machine learning model,
 SCI might not suffice, and might even obscure your impact.
 In that case, please contact the [MaibornWolff Green in IT project](#the-authors) for advice.
 
-But even in cases where there is no such case of a large upfront carbon investment, you should not totally forget about GHG. 
-Tracking monthly/yearly GHG isn't much extra effort, as we will see later, but it might be important in some cases. 
-The first is regulatory compliance, such as in cases where carbon certificates have to be purchased, 
+But even in cases where there is no such case of a large upfront carbon investment, you should not totally forget about GHG.
+Tracking monthly/yearly GHG isn't much extra effort, as we will see later, but it might be important in some cases.
+The first is regulatory compliance, such as in cases where carbon certificates have to be purchased,
 or [ESG goals](https://www.climatepartner.com/en/news-insights/glossary/environmental-social-governance-esg) have to be met.
 
-So a project total GHG score is only needed in cases with large carbon investments such as AI model training, and in 
+So a project total GHG score is only needed in cases with large carbon investments such as AI model training, and in
 all other cases we track SCI and monthly/yearly GHG.
 
 #### MW SCI Usage
@@ -94,9 +94,9 @@ Note that (E * I) + M over a chose timeframe is our GHG for that time. So there 
 
 We will first have a look at what are [possible functional units (R)](#our-functional-units) and [how to choose them](#how-to-choose-your-functional-unit).
 
-Then we discuss what tools we like to use to [measure](#our-practical-measurement-and-calculation-approach) the energy consumed by a software system (E) 
-and [what should be in- and excluded for this](#what-to-measure), what [tools to use to convert the measured energy into gCO2eq](#electricity-maps-paragraph) 
-based on the location-based marginal carbon emissions (I), and lastly how to [measure the embodied emissions of a software system (M)](#embodied-emissions-paragraph), 
+Then we discuss what tools we like to use to [measure](#our-practical-measurement-and-calculation-approach) the energy consumed by a software system (E)
+and [what should be in- and excluded for this](#what-to-measure), what [tools to use to convert the measured energy into gCO2eq](#electricity-maps-paragraph)
+based on the location-based marginal carbon emissions (I), and lastly how to [measure the embodied emissions of a software system (M)](#embodied-emissions-paragraph),
 based on what must be included and what can be excluded for this.
 
 ##### Our Functional Units
@@ -118,16 +118,16 @@ What are our recommended functional units and when should you choose one or the 
 
 ###### How to choose your functional unit
 
-For the choosing of the functional unit, we offer a quick and easy way [here](#the-heuristic-way) that will work 
-in most cases and does not require an in depth understanding of the subject material. This will usually be all that is required 
+For the choosing of the functional unit, we offer a quick and easy way [here](#the-heuristic-way) that will work
+in most cases and does not require an in depth understanding of the subject material. This will usually be all that is required
 and if this is the case in your project, you can scip the section titled ["A more in depth look"](#a-more-in-depth-look).
 But if you want to gain a better understanding or are faced with a more complex situation, give it a look.
 
 ###### The heuristic way
 
-For ease of use with customers, we created a handy flow chart. It can be used together with a customer to have 
-a structure that you can lead them through, or you can guide them through these questions another way. We have also 
-put its contents into an even easier quiz, that we hope to make available to everyone soon. Watch this space for that. 
+For ease of use with customers, we created a handy flow chart. It can be used together with a customer to have
+a structure that you can lead them through, or you can guide them through these questions another way. We have also
+put its contents into an even easier quiz, that we hope to make available to everyone soon. Watch this space for that.
 
 <img alt="Our easy find your R flow chart" height="1000" src="/diagrams/simple_functional_unit_mermaid-diagram.svg" width="2600"/>
 
@@ -140,20 +140,20 @@ In addition to this, you should go through the following checks afterward and fr
 
 ###### A more in depth look
 
-This section is not necessary if you could find what you needed through the one above. It provides a deeper look with examples 
+This section is not necessary if you could find what you needed through the one above. It provides a deeper look with examples
 that you can read if you are having trouble with the one above or want a deeper understanding of the subject matter.
 
-The first step is, of course, to eliminate those units that don't make sense for the system. 
+The first step is, of course, to eliminate those units that don't make sense for the system.
 E.g. if you have a system that receives requests from users that it answers with simple results consisting of only KBites worth of text.
-Streamed data volume would make no sense here. It could be that your application performs quite demanding calculations for some answers, 
+Streamed data volume would make no sense here. It could be that your application performs quite demanding calculations for some answers,
 and not for others. That might make API calls also a bad R. Why?
 
-Because the questions we must ask ourselves first when choosing a functional unit is: 
-**Is each instance of this R at least somewhat similar to its other instances? 
+Because the questions we must ask ourselves first when choosing a functional unit is:
+**Is each instance of this R at least somewhat similar to its other instances?
 If not, is their difference in occurrence at least somewhat stable?**
 
-What do we mean by this? Well, if our API offers a number of calculations that all differ wildly in how much 
-computing power their answer requires, and they are not called with the same level of volume, 
+What do we mean by this? Well, if our API offers a number of calculations that all differ wildly in how much
+computing power their answer requires, and they are not called with the same level of volume,
 even statistically normalised oer time, our results might not be meaningful.
 ```
 Let's say we have a weather app. Calls about the current weather in a place require almost no effort from our system and predictions for specific places require a lot. 
@@ -228,8 +228,8 @@ In cases where we relay solely on the SCI and monthly/yearly GHG, we will just m
 In cases where we also need our project total GHG score - [see here for when that is](#why-sci-is-the-most-important-metric-and-when-to-use-ghg) - we will need to
 also measure several other components, including during our development process.
 
-We also of course need certain basic analytics about our application, specifically those that comprise our functional unit. 
-If e.g. our functional unit is active users, we need to be able to determine how many users we have and how many are active. 
+We also of course need certain basic analytics about our application, specifically those that comprise our functional unit.
+If e.g. our functional unit is active users, we need to be able to determine how many users we have and how many are active.
 
 #### What we include, exclude and why
 
@@ -242,14 +242,14 @@ First lets get the easy decisions out of the way:
 - We definitely SHOULD [in some way](#emissions-produced-by-external-systems) include electricity/carbon used/created by systems we make calls to, that are not under our control, as otherwise we would create an incentive to simply outsource carbon intensive calculations
 - We definitely SHOULD NOT include carbon costs that were incurred when things like the fundamental infrastructure the internet runs on was created, the laptops we develop on were built, and other things that are very difficult to factor in and would not help us create an incentive to become more efficient
 
-Now with the easy decisions out of the way, we turn to the system boundaries and embodied emissions that are harder to define. 
-Generally for a common project, hosted on a cloud provider platform and with some sort of front end, 
-our system boundary will be the cloud subscription and the browser/user interface. 
+Now with the easy decisions out of the way, we turn to the system boundaries and embodied emissions that are harder to define.
+Generally for a common project, hosted on a cloud provider platform and with some sort of front end,
+our system boundary will be the cloud subscription and the browser/user interface.
 
-Note that it is valid to define a system boundary that excludes things on the basis that they can't be properly 
+Note that it is valid to define a system boundary that excludes things on the basis that they can't be properly
 measured/calculated, as long as we openly and visibly acknowledge the limitations of our resulting score.
 
-In the following sections we explore how we actually measure the emissions produced by each 
+In the following sections we explore how we actually measure the emissions produced by each
 and also what to do about emissions produced by systems we call.
 
 ### Our Practical Measurement and Calculation Approach
@@ -277,16 +277,16 @@ This makes it easier to pitch to potential customers, and once they are happy wi
 buy an electricity maps account.
 
 <a name="electricity-maps-paragraph"></a>
-We are in talks with Watttime and Electricity maps regarding offers specifically for MaibornWolff. One shared account across several 
-customer projects seems to be a no-go for legal reasons, so for now each customer would have to but a license separately. 
+We are in talks with Watttime and Electricity maps regarding offers specifically for MaibornWolff. One shared account across several
+customer projects seems to be a no-go for legal reasons, so for now each customer would have to but a license separately.
 Watch this space for updates on the matter.
 
 <a name="embodied-emissions-paragraph"></a>
-The CCF also factors in the embodied emissions of the cloud servers as explained [here](https://www.cloudcarbonfootprint.org/docs/embodied-emissions). 
-As embodied emissions often make up [majority of the emissions of a cluster](https://learn.greensoftware.foundation/hardware-efficiency/#embodied-carbon) we can not ignore them, 
+The CCF also factors in the embodied emissions of the cloud servers as explained [here](https://www.cloudcarbonfootprint.org/docs/embodied-emissions).
+As embodied emissions often make up [majority of the emissions of a cluster](https://learn.greensoftware.foundation/hardware-efficiency/#embodied-carbon) we can not ignore them,
 so the CCF already factoring them in makes it again stand out.
 
-Sadly there are also some known issues with the tool. The project is actively maintained, and we have ourselves opened bug tickets for some and 
+Sadly there are also some known issues with the tool. The project is actively maintained, and we have ourselves opened bug tickets for some and
 offered solutions for others, so this list might be not always be up-to-date, even though we will try our best to keep it so.
 At time of writing in early December 2023, the known issues are:
 
@@ -294,7 +294,7 @@ At time of writing in early December 2023, the known issues are:
 - There is a graphics bug that shows the data always one day ahead. This does not affect the actual data stored in the database that can be downloaded as a .csv file, but is embarrassing nonetheless, as showing a customer a graph that contains data a day that has not happened yet might not inspire confidence in them.
 - Another graphics bug concerns the x-axis scaling of the graph showing the emission sources. The displayed percentages seem to be correct, but the x-axis is scaled in a way that shows the larges source to always be at 100%, no matter how small it may actually be. The rest is then scaled in proportion to that, giving every bar in the diagram a much larger percentage than they actually have. Luckily, the actual numbers are written right on the bars, mitigating the impact of the error
 
-As problematic as those errors might sound, the tool is very actively maintained, with 16 releases in 2023 alone, and a growing community around it, so we are very confident that 
+As problematic as those errors might sound, the tool is very actively maintained, with 16 releases in 2023 alone, and a growing community around it, so we are very confident that
 unlike your projects SCI, the future quality of the CCF will only go upward.
 
 We recommend that you talk to your PO or potential customer and show them what the CCF can provide, by showing them the
@@ -305,34 +305,34 @@ If they are sold, [integrate it in your existing DevOps environment](/setup_guid
 #### Website emissions and efficiency
 
 Website emissions analysis will by its nature also venture into efficiency optimization. As such, this section goes beyond just measuring.
-We primarily use three tools, [Ecograder](https://ecograder.com/), [Beacon](https://digitalbeacon.co/) and [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 
+We primarily use three tools, [Ecograder](https://ecograder.com/), [Beacon](https://digitalbeacon.co/) and [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 that each have their place at different times in the development lifecycle. We recommend you proceed something like the following:
 
 ##### During development
 
-Use Lighthouse constantly during development. Beacon and Ecograder need publicly available websites, 
-so you can't use them when you test locally/on your DEV-environment. Lighthouse will not give you a CO2eq calculation, 
+Use Lighthouse constantly during development. Beacon and Ecograder need publicly available websites,
+so you can't use them when you test locally/on your DEV-environment. Lighthouse will not give you a CO2eq calculation,
 but you can point you towards design inefficiencies that you can avoid, thereby becoming more CO2eq-efficient as well.
 
 ##### After every PROD-deployment
 
-Use both Beacon and Ecograder on your website after each PROD-deployment. 
+Use both Beacon and Ecograder on your website after each PROD-deployment.
 
-Beacon because it gives you a CO2eq score not only for your first visit, but also for subsequent visits. 
-Subsequent visits are usually more efficient because of Cookies, so you need a score for both 
-to be able to create representative calculations. Note each score like you might 
-the results of a linting tool after a sprint change. Assuming you have analytics about website visits, 
-you can now calculate an approximate value for the CO2eq usage of this part of the system. 
+Beacon because it gives you a CO2eq score not only for your first visit, but also for subsequent visits.
+Subsequent visits are usually more efficient because of Cookies, so you need a score for both
+to be able to create representative calculations. Note each score like you might
+the results of a linting tool after a sprint change. Assuming you have analytics about website visits,
+you can now calculate an approximate value for the CO2eq usage of this part of the system.
 
-Use Ecograder because it not only gives you a score, but more so because it points you to the largest avoidable sources 
+Use Ecograder because it not only gives you a score, but more so because it points you to the largest avoidable sources
 of your CO2eq output. Ideally there would be a story after every PROD Deployment dedicated to reducing these based on the results.
 
 #### Emissions produced by external systems
 
-In this case external systems mean systems that are mont only not on our cluster, but fully outside our control. 
-Otherwise, we could measure their carbon output like described above. Luckily, we do not need an exact score in order to 
-preserve an incentive structure that pushes us to be more efficient over time. We can instead set a few rules and heuristics 
-to help us with that. 
+In this case external systems mean systems that are mont only not on our cluster, but fully outside our control.
+Otherwise, we could measure their carbon output like described above. Luckily, we do not need an exact score in order to
+preserve an incentive structure that pushes us to be more efficient over time. We can instead set a few rules and heuristics
+to help us with that.
 
 1. If you can find the CO2eq or KW/h cost of the external process use that. Take as an example a ChatGPT query, which according to [this analysis](https://piktochart.com/blog/carbon-footprint-of-chatgpt/), produces approximately 4.32 grams of CO2. Sadly you often won't be able to such a value.
 2. If you extract something from your system and replace it with a call to an external system, always assume that it is at least as costly as when your system was doing it, unless you have proof to the contrary. Take the reduction of KW/h needed by your system following the extraction of the process, divided by its frequency as your assumed cost of the outsourced process.
@@ -342,21 +342,21 @@ to help us with that.
 
 #### The actual MW SCI calculation
 
-Now that you have chosen a functional unit (R), are measuring the CO2eq output of your cluster, have a sample for your website, values for calls to external 
-systems and analytics for your application that tell you quantity of your functional unit (over a period of time) you can calculate 
-your SCI. You can automate this, but doing it once every sprint change or PROD-deployment is enough. While choosing your functional 
-unit you will have also chosen a timeframe over which you want to average your energy consumption. Even if that timeframe is much 
-larger than the frequency of you SCI calculation, you can still do it just the same. 
+Now that you have chosen a functional unit (R), are measuring the CO2eq output of your cluster, have a sample for your website, values for calls to external
+systems and analytics for your application that tell you quantity of your functional unit (over a period of time) you can calculate
+your SCI. You can automate this, but doing it once every sprint change or PROD-deployment is enough. While choosing your functional
+unit you will have also chosen a timeframe over which you want to average your energy consumption. Even if that timeframe is much
+larger than the frequency of you SCI calculation, you can still do it just the same.
 
-We will now go step by step along the manual path to calculating the SCI. Currently, we do not offer a template to automate 
-this, but might do so in the future. If you have done this in your project, [please contact us](#the-authors). 
+We will now go step by step along the manual path to calculating the SCI. Currently, we do not offer a template to automate
+this, but might do so in the future. If you have done this in your project, [please contact us](#the-authors).
 
-Download the CSV from your Cloud Carbon Footprint Tool deployment. Use it as your basis and add the samples from your Website, 
-one for first time visits, one for repeat visits in another column and do the same for calls to external systems. 
-Average them for the timeframe you have chosen to make the results meaningful. As long as your analytics data can provide 
-you with this data on a daily/hourly/etc. basis, this does not have to be the same timeframe over which you analyse the SCI. 
-You could e.g. average them daily and still analyse how your SCI changes over a month. Add your Rs for the analysed timeframe 
-from your analytics (e.g. API calls). Add up all CQ2eq produced over a meaningful timeframe to get the GHG for that time 
+Download the CSV from your Cloud Carbon Footprint Tool deployment. Use it as your basis and add the samples from your Website,
+one for first time visits, one for repeat visits in another column and do the same for calls to external systems.
+Average them for the timeframe you have chosen to make the results meaningful. As long as your analytics data can provide
+you with this data on a daily/hourly/etc. basis, this does not have to be the same timeframe over which you analyse the SCI.
+You could e.g. average them daily and still analyse how your SCI changes over a month. Add your Rs for the analysed timeframe
+from your analytics (e.g. API calls). Add up all CQ2eq produced over a meaningful timeframe to get the GHG for that time
 and divide it by Rs over that timeframe to get your SCI over time. Let's look at an example:
 
 ```
@@ -378,8 +378,8 @@ You would of course do this in Excel for every day of the timespan and create a 
 However, based on these two, simplified data points your update has indeed made your application more effcient. 
 ```
 
-As you can see in the example, a lower or higher number of visits does not affect our SCI, but changes in efficiency do. 
-A change in user behavior, such as users starting to use the chatbot more, would though. This is why we have to average results 
+As you can see in the example, a lower or higher number of visits does not affect our SCI, but changes in efficiency do.
+A change in user behavior, such as users starting to use the chatbot more, would though. This is why we have to average results
 over a meaningful timeframe and also be ready to reassess our chosen R if we observe large, unforeseen changes. You can also see
 that GHG is very much affected by a change in number of visitors, and how only relying on it would punish us for serving more customers.
 
@@ -389,7 +389,7 @@ This would mean that if we continue to average our usage over a day, we would al
 In such a case we should start averaging not over a day, but a month to see more meaningful results over time. 
 ```
 
-As long as this section might have been, by now you hopefully see that calculating SCI scores is not complicated if you 
+As long as this section might have been, by now you hopefully see that calculating SCI scores is not complicated if you
 have the necessary metrics at hand. We hope to see you again in our carbon optimisation guide once it is available, watch this space for that.
 
 ### The authors
