@@ -131,6 +131,7 @@ put its contents into an even easier quiz, that we hope to make available to eve
 
 ![Our easy find your R flow chart](https://raw.githubusercontent.com/MaibornWolff/Carbon-Measuring-Guide/main/diagrams/simple_functional_unit_mermaid-diagram.svg)
 
+<img alt="Our easy find your R flow chart" height="1000" src="https://raw.githubusercontent.com/MaibornWolff/Carbon-Measuring-Guide/main/diagrams/simple_functional_unit_mermaid-diagram.svg" width="100%" />
 In addition to this, you should go through the following checks afterward and from time to time during the software lifecycle, to make sure the chosen R does make sense:
 
 - If I apply this R, can it happen that by being more successful(more users sign up/devises register, more sales happen, etc.) I get a worse SCI? The answer should be NO!
