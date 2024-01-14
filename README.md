@@ -129,15 +129,9 @@ For ease of use with customers, we created a handy flow chart. It can be used to
 a structure that you can lead them through, or you can guide them through these questions another way. We have also
 put its contents into an even easier quiz, that we hope to make available to everyone soon. Watch this space for that.
 
-![Our easy find your R flow chart](https://raw.githubusercontent.com/MaibornWolff/Carbon-Measuring-Guide/main/diagrams/simple_functional_unit_mermaid-diagram.svg)
+![functional unit flow chart](https://raw.githubusercontent.com/MaibornWolff/Carbon-Measuring-Guide/image_fix/diagrams/simple_functional_unit_old_mermaid_dark.svg)
 
-<img alt="Our easy find your R flow chart" height="1000" src="https://raw.githubusercontent.com/MaibornWolff/Carbon-Measuring-Guide/main/diagrams/simple_functional_unit_mermaid-diagram.svg" width="100%" />
-
-![Our easy find your R flow chart](https://raw.githubusercontent.com/MaibornWolff/Carbon-Measuring-Guide/image_fix/diagrams/simple_functional_unit_old_mermaid_dark.svg)
-
-<img alt="Our easy find your R flow chart" height="1000" src="https://raw.githubusercontent.com/MaibornWolff/Carbon-Measuring-Guide/image_fix/diagrams/simple_functional_unit_old_mermaid_dark.svg" width="100%" />
-
-[![](https://raw.githubusercontent.com/MaibornWolff/Carbon-Measuring-Guide/image_fix/diagrams/simple_functional_unit_old_mermaid_dark.svg)
+If you have trouble with the way GitHub shows the flow chart, please download the svg file from the [diagrams folder](https://github.com/MaibornWolff/Carbon-Measuring-Guide/tree/image_fix/diagrams).
 
 In addition to this, you should go through the following checks afterward and from time to time during the software lifecycle, to make sure the chosen R does make sense:
 
